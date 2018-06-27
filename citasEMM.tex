@@ -1,0 +1,1679 @@
+\documentclass[12 pt, letter]{article}
+
+\usepackage[letterpaper,right=1.25in,left=1.25in,top=1in,bottom=1in]{geometry}
+\usepackage{ae} % or {zefonts}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{setspace} %allows to change linespacing
+%\usepackage{dashrule} %allows ro draw dotted lines
+\usepackage{color}   % allows usage of color fonts
+\definecolor{light-gray}{gray}{0.65} % defines color and its name
+\definecolor{NavyBlue}{rgb}{0.,0,0.5}
+\definecolor{med-gray}{gray}{0.5} % defines color and its name
+
+% avoid clubs and widows
+\clubpenalty=10000 \widowpenalty=10000
+% \displaywidowpenalty=10000
+
+\parindent=0mm  % removes indent at start of paragraphs
+
+\setstretch{1} %linespacing
+%\onehalfspacing
+%\doublespacing
+
+% SET LONG OR SHORT VERSION OF CV
+\usepackage{ifthen}
+\newboolean{longcv}
+\setboolean{longcv}{true}  % switch true, false, to produce long, short version of cv
+\newcommand{\condcomment}[2]{\ifthenelse{#1}{#2}{}}
+%  para usarlo se pone
+%  \condcomment{\boolean{longcv}}{
+%   ...
+%  }
+
+%FOR SPANISH FORMATTING (HYPHENATION ETC.)
+\usepackage[spanish]{babel}
+
+% Allows to manually change space between and above items (pero jode mi environment citasmitrabajo)
+%\usepackage{enumitem} %% p.ej. \begin{itemize}[topsep=-3pt, itemsep=-3pt]
+
+\usepackage{enumitem} % Control layout of itemize, enumerate, description
+
+%% Drops space between and above items and enumerates
+\let\olditemize=\itemize
+\let\endolditemize=\enditemize
+\renewenvironment{itemize}{%
+    \vspace*{-1.5\parsep}%
+    \begin{olditemize}%
+      \setlength{\parskip}{0.1\parskip}%
+      \setlength{\itemsep}{0.1\itemsep}%
+  }%
+  {%
+    \end{olditemize}%
+  }
+%\let\oldenumerate=\enumerate
+%\let\endoldenumerate=\endenumerate
+%\renewenvironment{enumerate}{%
+%    \vspace*{-1.5\parsep}%
+%    \begin{oldenumerate}%
+%      \setlength{\parskip}{0.1\parskip}%
+%      \setlength{\itemsep}{0.1\itemsep}%
+%  }%
+%  {%
+%    \end{oldenumerate}%
+%  }
+
+% MY OWN ENUMERATES WITH SPECIAL LABEL AN NO SPACING
+%\newenvironment{CitasMiTrabajo}{
+%    \begin{tiny}
+%    \begin{color}{med-gray}
+%    \begin{enumerate}
+%        \renewcommand\theenumi{\tiny{\emph{cita \arabic{enumi}}}}
+%        \setlength{\itemsep}{.1\itemsep}
+%        \setlength{\parskip}{.1\parskip}
+%    }{\end{enumerate}\end{color}\end{tiny}}
+\newenvironment{CitasMiTrabajo}{
+    \begin{footnotesize}
+    \begin{enumerate}[label={\footnotesize\emph{cita~\arabic*}},ref=\arabic*] % this is how enumitem lets you set different label and ref, see http://tex.stackexchange.com/questions/286879/customize-label-and-ref
+%        \renewcommand\theenumi{\footnotesize{\emph{cita~\arabic{enumi}}}}    % how I did it before enumitem
+        \setlength{\itemsep}{.1\itemsep}
+        \setlength{\parskip}{.1\parskip}
+    }{\end{enumerate}\end{footnotesize}}
+
+\usepackage[colorlinks=true,urlcolor=NavyBlue]{hyperref}
+
+% allows input of bibtex entries in the text
+% see http://tex.stackexchange.com/questions/49048/how-to-cite-one-bibentry-in-full-length-in-the-body-text
+\usepackage[sort]{natbib}\bibpunct[]{(}{)}{,}{a}{}{;} % handles biblio and references 
+\usepackage{bibentry}
+\bibliographystyle{apalike}
+
+\usepackage{mathptmx}           % set font type to Times
+\usepackage[scaled=.90]{helvet} % set font type to Times (Helvetica for some special characters)
+\usepackage{courier}            % set font type to Times (Courier for other special characters)
+
+% used to sum total number of cites, see http://tex.stackexchange.com/questions/290167/perform-math-operation-with-values-of-labels
+\usepackage{xparse,refcount}
+\ExplSyntaxOn
+  \cs_new_eq:NN \calc \fp_eval:n
+\ExplSyntaxOff
+
+\begin{document}
+
+\nobibliography{/home/eric/Dropbox/mydocs/magar}
+
+\selectlanguage{spanish}
+%Makes itemized lists look as in English despite language=Spanish
+\renewcommand{\labelitemi}{\textbullet}
+\renewcommand{\labelitemii}{\normalfont\bfseries\textendash}
+\renewcommand{\labelitemiii}{$\star$}
+\renewcommand{\labelitemiv}{\textperiodcentered}
+
+\textbf{\LARGE{Citas documentadas al trabajo de Eric Magar}} \\ [-2ex]
+\makebox[\textwidth][r]{\hrulefill}
+
+\bigskip
+
+Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en medios periodÃ­sticos. IncluÃ­ Ãºnicamente aquÃ©llas para las que tengo evidencia y he dejado fuera citas firmadas por quienes tambiÃ©n son coautores del trabajo en cuestiÃ³n. Cada cita incluye, en color azul, el vÃ­nculo a su prueba documental.
+
+\medskip
+
+\noindent Hasta el 31 de enero 2016, he documentado un total de \textbf{\calc{
+  \getrefnumber{ncites:magar.1994}+
+  \getrefnumber{ncites:magar.molinar.1995}+
+  \getrefnumber{ncites:magar.etal.1998}+
+  \getrefnumber{ncites:cox.magar.1999}+
+  \getrefnumber{ncites:amorim.magar.2000}+
+  \getrefnumber{ncites:magar.weldon.2001}+
+  \getrefnumber{ncites:magarArgDecrees2001}+
+  \getrefnumber{ncites:magar.2001}+
+  \getrefnumber{ncites:magar.huerta.2006}+
+  \getrefnumber{ncites:magar.romero.fae.2007}+
+  \getrefnumber{ncites:magar.romero.rcp.2007}+
+  \getrefnumber{ncites:magar.moraes.2008.rucp}+
+  \getrefnumber{ncites:estevez.magar.rosas.2008}+
+  \getrefnumber{ncites:magar.romero.2008}+
+  \getrefnumber{ncites:magar.estevez.rosas.2010}+
+  \getrefnumber{ncites:sanchez.magaloni.magar.2011}+
+  \getrefnumber{ncites:magar.gubCoatMx.2012}+
+  \getrefnumber{ncites:magar.moraes.2012pp}+
+  \getrefnumber{ncites:cantuDesMagar2014}
+}
+ citas} en revistas de 15 paÃ­ses.
+
+
+
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   CantÃº Desposato Magar 2014   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{cantuDesposatoMagar.MxRcv.2014} (\href{http://www.politicaygobierno.cide.edu/index.php/pyg/issue/view/5}{\footnotesize{ISSN:1665-2037}}). \textbf{\color{red}\ref{ncites:cantuDesMagar2014}~cita.}
+}}
+        \begin{CitasMiTrabajo}
+        %  1 tengo pdf
+        \item \bibentry{reynoso.subnat2015} (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/cantuDesMagarPyG/reynosoIdeolSubnatMx2015pyg.excerpt.pdf}{prueba}
+
+        \label{ncites:cantuDesMagar2014} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Gubernatorial coattails 2012   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.gubCoatMx.2012} (\href{http://www.journalofpolitics.org/}{\footnotesize{ISSN:0022-3816}}). \textbf{\color{red}\ref{ncites:magar.gubCoatMx.2012}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item \bibentry{marquez.aparicio.2010} (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/marquez+aparicio2010pyg.excerpt.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item \bibentry{meredith.2013} (\textbf{EE.UU.}) $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/meredith2014apsr.excerpt.pdf}{prueba}
+
+        %  4 tengo pdf
+        \item \bibentry{penades.sanchez.Genero.2012} (\textbf{EspaÃ±a}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/penades.sanchezGeneroMx2012alh.excerpt.pdf}{prueba}
+
+        %  3 tengo pdf
+        \item \bibentry{huang.wang.coattTaiwan.2014} (\textbf{EE.UU.}) $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/huang.wangCoattailsTaiwan2014es.excerpt.pdf}{prueba}
+
+        %  5 tengo pdf
+        \item \bibentry{garmendia.ozenCoattails2015} (\textbf{EE.UU.})  $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/garmendia.ozenCoattails2015es.pdf}{prueba}
+
+        %  6 tengo pdf
+        \item \bibentry{borgesNatPtyCoal2015} (\textbf{Brasil}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/gubCoatJOP2012/borgesNacionalizacao2015dados.excerpt.pdf}{prueba}
+
+        \label{ncites:magar.gubCoatMx.2012} % place this label after last item to record the number of cites for cross-referencing
+
+% cuando se publique: 
+        % %   tengo pdf
+        % \item \bibentry{micozzi.lucardiElCycleCareer2016lsq} (\href{http://ericmagar.com/cv/cites/gubCoatJOP2012/.pdf}{\textbf{EE.UU.}}). 
+% @ARTICLE {micozzi.lucardiElCycleCareer2016lsq,
+%     author  = "Micozzi, Juan Pablo and Lucardi, Adri{\â€™a}n",
+%     title   = "The Effect of the Electoral Cycle on Legislatorsâ€™ Career Strategies. Evidence from Argentina, 1983-2007",
+%     volume  = "forthcoming",
+%     journal = lsq,
+%     year    = 2016
+% }
+% cuando se publique: Lucardi, Does district magnitude affect electoral coordination?
+
+        \end{CitasMiTrabajo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Moraes Party Politics 2012   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.moraes.2012pp} (\href{http://dx.doi.org/10.1177/1354068810377460}{\footnotesize{ISSN:1354-0688}}). \textbf{\color{red}\ref{ncites:magar.moraes.2012pp}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        % 4 tengo pdf
+        \item \bibentry{palanza.sin.itemVeto.2013} (\textbf{Alemania}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesPP/palanza.sin2013jpla.excerpts.pdf}{prueba}
+
+        %  1 tengo pdf
+        \item \bibentry{chasquetti.micozzi.progAmbitUrug.2014} (\textbf{EE.UU.}) $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesPP/chasquetti.micozzi.subnatConnUruguay2014lsq.excerpts.pdf}{prueba}
+
+        % 2 tengo pdf
+        \item \bibentry{palanza.sin.vetoMultiparty.2014} (\textbf{EE.UU.}) $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesPP/sin.palanza2014cps.excerpts.pdf}{prueba}
+
+        % 3 tengo pdf
+        \item \bibentry{sonnicksen.prasident.2014} (\textbf{Alemania}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesPP/sonnicksen2014frontbackMatter.pdf}{prueba}
+
+        %  tengo pdf en otro directorio que tambiÃ©n cita
+        \item \bibentry{santos.etal.controlAgenda.2014} (\textbf{Chile}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/santos.perezLinan.GarMontero2014rcp.pdf}{prueba}
+
+        \label{ncites:magar.moraes.2012pp} % place this label after last item to record the number of cites for cross-referencing
+
+% nos cita pero es working paper Medeiros, Danilo, et al. "Fazendo polÃ­tica: o que ganham os partidos brasileiros quando entram para a coalizÃ£o governista?."
+
+        \end{CitasMiTrabajo}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   SÃ¡nchez Magaloni Magar 2011   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{sanchez.magaloni.magar.2011} (\href{http://ericmagar.com/cv/pdfs/sanchez+magaloni+magarChapter2011.pdf}{\footnotesize{ISBN-13:978-110-700-109-1}}). \textbf{\color{red}\ref{ncites:sanchez.magaloni.magar.2011}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item Carlos Elizondo Mayer-Serra y Ana Laura Magaloni (2010) ``La forma es fondo: cÃ³mo se nombran y deciden los Ministros de la Suprema Corte de Justicia'' \emph{Revista Mexicana de Derecho Constitucional} nÃºm.~23 (julio--diciembre), pp.~27--60 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/MAGALONIELIZONDO2010cc23.pdf}{prueba}
+
+        %  tengo pdf
+        \item T.S.~Clark y J.K.~Staton  (2011) ``Challenges and Opportunities of Judicial Independence Research'' \emph{Law \& Courts} vol.~21, n\'um.~2, pp.~10--6 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/clark.staton2011.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item Julio RÃ­os Figueroa (2012) ``Sociolegal studies on Mexico'' \emph{Annual Review of Law and Social Science} vol.~8, pp.~307--21 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/riosSociolegalMex2012.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{carroll.tiedeVotingTribChile2012jhr} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/carroll.tiedeVotingTribChile2012jhr.pdf}{prueba}
+
+        %  tengo pdf
+        \item A.~Castagnola (2012) ``I Want It All, and I Want It Now: The Political Manipulation of Argentina's Provincial High Courts'' \emph{Journal of Politics in Latin America} vol.~4, n\'um.~2, pp.~39--62 (\textbf{Alemania}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/castagnolaArgProvCourts2012jpla.pdf}{prueba}
+
+        %  tengo pdf
+        \item E.~Mart\'inez Barahona y A.~Brenes Barahona (2012) ``CORTES SUPREMAS Y CANDIDATURAS PRESIDENCIALES EN CENTROAMÃ‰RICA'' \emph{Revista de Estudios Pol\'iticos} n\'um.~158, pp.~165--206 (\textbf{EspaÃ±a}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/mtnzBarahonaCortesCandPres2012rep.pdf}{prueba}
+
+        %  tengo pdf
+        \item Ana Mar\'ia Montoya (2013) ``Si no vas al Senado no te eligen Magistrado'' \emph{Colombia Internacional} n\'um.~79, pp.~155--90 (\textbf{Colombia}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/sanchMagalMagarChapter/montoya2013.pdf}{prueba}
+
+        \label{ncites:sanchez.magaloni.magar.2011} % place this label after last item to record the number of cites for cross-referencing
+
+%%% Quizás nos cite Anal Laura en Nexos vol 30  num 369 sept 2008.
+%Lucia Dalla Pellegrina, Laarni Escresa and Nuno Garoupa. Measuring Judicial Ideal Points in New Democracies: The Case of the Philippines  Asian Journal of Law and Society / Volume 1 / Issue 01 / May 2014, pp 125-164
+%Aníbal Pérez-Liñán and Andrea Castagnola. Judicial Instability and Endogenous Constitutional Change: Lessons from Latin America. Forthcoming bjps
+% Julio Ríos y Paloma Aguilar Justice institutions in autocracies: a framework for analysis Article‚Democratization  May 2017 DOI: 10.1080/13510347.2017.1304379
+% Carnota W.F.	2016 Judicial review within Mexican sub-national constitutionalism Anuario Iberoamericano de Justicia Constitucional, (20)pp.69-84.
+        
+        \end{CitasMiTrabajo}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar EstÃ©vez Rosas Dynamic 2010   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.estevez.rosas.2010} (\href{http://ssrn.com/abstract=1683498}{\footnotesize{obtÃ©nlo}}). \textbf{\color{red}\ref{ncites:magar.estevez.rosas.2010}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        % 1 tengo pdf
+        \item Puig, C. (2010)
+        ``El
+        IFE que viene'' \emph{Milenio} nÃºm.\ 3935, 9 de octubre, p.~3 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarEtalIFEDinam/puig.pdf}{prueba}
+        % otro url http://impreso.milenio.com/node/8845241
+
+        %  2 tengo pdf
+        \item RubÃ­, M. (2010)
+        ``Mayor error del IFE: el consejo Ugalde del 2003'' \emph{El Economista} 11 de octubre, p.~44 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarEtalIFEDinam/rubi.pdf}{prueba}
+        % otro url http://eleconomista.com.mx/sociedad/2010/10/10/mayor-error-ife-consejo-ugalde-2003
+
+        %  tengo pdf
+        \item \bibentry{lara2015} (\href{http://ericmagar.com/cv/cites/magarEtalIFEDinam/lara2015.pdf}{\textbf{Alemania}}).
+
+        \label{ncites:magar.estevez.rosas.2010} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Gaceta Ciencia PolÃ­tica 2009   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \href{http://ericmagar.com/cv/pdfs/magarGCP2009.pdf}{``El inmovilismo democrÃ¡tico: un modelo de relaciones ejecutivo-legislativo en regÃ­menes con poderes separados''}, \href{http://gacetadecienciapolitica.itam.mx/}{\emph{La Gaceta de Ciencia PolÃ­tica}} aÃ±o 6, nÃºm.\ 1 (otoÃ±o/invierno 2009), pp.~11--25.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   Magar Romero Timmons IDB 2009   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \item \href{http://ssrn.com/abstract=1963863}{``The political economy of fiscal reforms in Latin America: Mexico''} con Vidal Romero y Jeffrey Timmons, comisionado por el Departamento de InvestigaciÃ³n del Banco Interamericano de Desarrollo (marzo 2009).
+%        % tambiÃ©n disponible en http://ericmagar.com/mywork/IADB-Fiscal_reform_Mexico_Chapterv30.pdf
+
+% al parecer nos cita Tax Reforms in Latin America in an Era of Democracy, Hallerberg Scartascini Latin American Research Review 01/2016; 51(1):132-158. DOI:10.1353/lar.2016.0003
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Moraes Revista Uruguaya 2008   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.moraes.2008.rucp} (\href{http://www.fcs.edu.uy/icp/downloads/revista/RUCP17/RUCP-17-02_Magar&Moraes.pdf}{\footnotesize{ISSN:0797-9789}}). \textbf{\color{red}\ref{ncites:magar.moraes.2008.rucp}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item \bibentry{garcia.montero.presidentes.2009} (\textbf{EspaÃ±a}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesRUCP/garciamontero.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item \bibentry{santos.etal.controlAgenda.2014} (\textbf{Chile}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesRUCP/santos.perezLinan.gmAgendaPres2014rcp.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{rodriguez2014} (\textbf{Espa\~na}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesRUCP/rodriguezCecilia2014phd.pdf}{prueba}
+
+        \label{ncites:magar.moraes.2008.rucp} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   EstÃ©vez Magar Rosas Electoral Studies 2008   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{estevez.magar.rosas.2008} (\href{http://ericmagar.com/cv/pdfs/EstevezMagarRosasIFEElecStud2008.pdf}{\footnotesize{ISSN:0261-3794}}). \textbf{\color{red}\ref{ncites:estevez.magar.rosas.2008}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  5 tengo pdf
+        \item PoirÃ©, A. (2006)
+        ``Reflexiones sobre la equidad en la
+        elecciÃ³n presidencial de 2006'' \emph{Este PaÃ­s} nÃºm.\ 184
+        (julio), pp.\ 16--23  (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/poire.pdf}{prueba}
+
+        %  1 tengo pdf
+        \item Herrera, J. (2006)
+        ``Perciben consejo equilibrado y con
+        credibilidad'' \emph{El Universal} 19 de junio, p.\ A10  (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/univ.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item \bibentry{eisenstadt.2007} (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/eisen.pdf}{prueba}
+
+        %  3 tengo pdf chafa
+        \item Crespo, J.A. (2009)
+        ``IFE: partidizaciÃ³n de los consejeros''
+        \emph{ExcÃ©lsior} 8 de enero, p.\ Nac-9 (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/crespo.pdf}{prueba}
+
+        %  4 tengo pdf
+        \item LÃ³pez Guerra, C. (2009)
+        ``Â¿Partidismo en el IFE?''
+        \emph{Nexos} 374, febrero, pp.\ 100--1 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/lg.pdf}{prueba}
+
+        %  7 tengo pdf
+        \item Langston, J. (2009) ``Las reformas al COFIPE, 2007''
+            \emph{PolÃ­tica y Gobierno}
+            vol.\ temÃ¡tico Elecciones en MÃ©xico, pp.\ 245--72 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/langstonRefCofipe2009pyg.excerpt.pdf}{prueba}
+            
+        %  tengo pdf
+        \item \bibentry{bumin2009} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/bumin2009phd.pdf}{prueba}
+
+        %  6 tengo pdf
+        \item Barrientos del Monte, F. (2010) ``Confianza en las elecciones y el rol de los organismos electorales en AmÃ©rica Latina'' \emph{Revista de Derecho Electoral} nÃºm.\ 10 (segundo semestre 2010) (\textbf{Costa Rica}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/Barrientos.pdf}{prueba}
+
+        %  13 tengo pdf
+        \item Harbers, I. (2010)
+            ``Political Organization	in Multi-level Settings: Mexican and Latin American Parties and Party Systems after Decentralization'', PhD Dissertation Leiden University. (\textbf{Pa\'ises Bajos}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/harbers.excerpt.pdf}{prueba}
+
+        %  tengo pdf
+        \item Morris, S.D. and Klesner, J. (2010)
+            ``Corruption and Trust: Theoretical Considerations and Evidence From Mexico''
+            \emph{Comparative Political Studies} 43(10):1258--85. (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/morris.klesnerCorruptionTrustMx2010cps.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{fowler2010} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/fowler2010phd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{diazsandoval2011} (\textbf{M\'exico}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/diazSandoval2011phd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{barrientos2011} (\textbf{M\'exico}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/barrientos2011.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{birch2011} (\textbf{Reino Unido}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/birch2011.pdf}{prueba}
+
+        %  8 tengo pdf
+        \item Serra, G. (2012)
+            ``The risk of partyarchy and democratic backsliding: Mexico's 2007 electoral reform''
+            \emph{Taiwan Journal of Democracy}
+            vol.\ 8, no.\ 1, pp.\ 31--56 (\textbf{TaiwÃ¡n}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/serraElecRefMexico2012tjd.pdf}{prueba}
+
+        %  9 tengo pdf
+        \item Reyes Heroles, F. (2013)
+            ``PerversiÃ³n''
+            \emph{Reforma}
+            29 de enero, p.\ A-13 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/reyesHeroles2013.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{reyesmartin2012} (\textbf{Espa\~na}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/martinTrife2012amlh.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{serraPriComeback2013} (\textbf{Alemania}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/serraDemiseResurrection2013jpla.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{diazdominguezPhD2014} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/diazDominguez2014phd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{garciaescobedo2014} (\textbf{M\'exico}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/garciaEscon2014phd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{resendiz2014} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/resendiz2014.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{arevalo2015} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/arevalo2015.pdf}{prueba}
+
+        %  10 tengo pdf
+        \item Ugues Jr., A. and Medina Vidal, D.X. (2015)
+            ``Public evaluations of electoral institutions in Mexico: An analysis of IFE and TRIFE in the 2006 and 2012 elections''
+            \emph{Electoral Studies}
+            vol.\ 40 pp.\ 231--44 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/ugues.medinaPubEvalElectoralInstitutionsMexico2015es.excerpt.pdf}{prueba}
+
+        %  11 tengo pdf
+       \item Tarouco, G. (2015)
+            ``The role of political parties in electoral governance: delegation and the quality of elections in Latin America'' 
+            \emph{Election Law Journal} forthcoming 2015. $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/taroucoRolePtiesEllGovernance2015elj.pdf}{prueba}
+
+        %  12 tengo pdf
+        \item Faustino Torres, A. (2015)
+            ``El Instituto Federal Electoral y los claroscuros de su dise\~no institucional, 1990--2008''
+            \emph{Estudios Pol\'iticos} n\'um.\ 35 pp.\ 129--56. (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/faustino.excerpt.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{diazdominguezConfianzaElec2015nexos} (\textbf{M\'exico}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/diazdominguezConfianzaElec2015nexos.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{martin2015} (\textbf{Alemania}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/martin2015.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{hyde2015} (\textbf{EE.UU.}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/hyde2015.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{diazdominguezTrifeGasto2016pl} (\textbf{M\'exico}).  $\rightarrow$ \href{http://ericmagar.com/cv/cites/estevezEtalElecStud/diazDominguezTrifeGasto2016pl.pdf}{prueba}
+
+        \label{ncites:estevez.magar.rosas.2008} % place this label after last item to record the number of cites for cross-referencing
+
+        %  FALTA COMPLETAR Y PRUEBA
+%
+%       SD Morris - 2009 [BOOK] Political corruption in Mexico: The impact of democratization  - rienner.com
+%
+%       Falso, no nos cita    \item Carolien Van Ham and Staffan Lindberg "When guardians matter most: exploring the conditions under which EMB institutional design affects election integrity" Irish Political Studies. 
+%
+% Los siguientes 3 no han sido publicados
+%
+% @UNPUBLISHED{alejandregalaz2012,
+%     author = "Omar Ernesto Alejandre Galaz",
+%     title  = "La autonom\'ia alcanzada por el Consejo General del IFE",
+%     note   = "Seminario de an\'alisis del proceso electoral federal 2011--2012",
+%     year   = "2012"
+% }
+%
+% @INPROCEEDINGS{mebaneForensics.2013,
+%     author    = "Walter R Mebane Jr.",
+%     title     = "Election forensics: The meanings of precinct vote counts' second digits",
+%     booktitle = "Summer Meeting of the Political Methodology Society, University of Virginia",
+%     year      = "2013"
+% }
+%
+% @CONFERENCE{lopezmirau.etal2012,
+%     author    = "Guillermo Lopez Mirau, Teresa Ovejero, and Julia Pomares",
+%     title     = "The Implementation of E-voting in Latin America: The Experience of Salta, Argentina from a Practitioner's Perspective",
+%     booktitle = "5th International Conference on Electronic Voting 2012",
+%     year      = "2012"
+% }
+
+        \end{CitasMiTrabajo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Romero Revista Ciencia PolÃ­tica 2008   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.romero.2008} (\href{http://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0718-090X2008000100013&lng=es&nrm=iso}{\footnotesize{ISSN:0716-1417}}). \textbf{\color{red}\ref{ncites:magar.romero.2008}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  tengo pdf
+        \item \bibentry{palma2010} (\textbf{Chile}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarRomero2008/palma2010.pdf}{prueba}
+
+        %  1
+        \item Serra, G. (2012)
+            ``The risk of partyarchy and democratic backsliding: Mexico's 2007 electoral reform''
+            \emph{Taiwan Journal of Democracy}
+            vol.\ 8, no.\ 1, pp.\ 31--56 (\textbf{TaiwÃ¡n}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/serraElecRefMexico2012tjd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{maldonado2013} (\textbf{Chile}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarRomero2008/maldonado2013.pdf}{prueba}
+
+        \label{ncites:magar.romero.2008} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+%%%%%%$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Romero Revista Ciencia PolÃ­tica 2007   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.romero.rcp.2007} (\href{http://ericmagar.com/cv/pdfs/Magar+RomeroMx2006rcp07.pdf}{\footnotesize{ISSN:0716-1417}}).  \textbf{\color{red}\ref{ncites:magar.romero.rcp.2007}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1
+        \item Serra, G. (2009)
+        ``Una lectura crÃ­tica de la reforma electoral en MÃ©xico a raÃ­z de la elecciÃ³n de 2006''
+        \emph{PolÃ­tica y Gobierno} vol.\ 16, nÃºm.\ 2, pp.\ 411--27
+        (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarRomero2007rcp/serra2009pyg.pdf}{prueba}
+
+        % 2
+        \item Serra, G. (2012)
+            ``The risk of partyarchy and democratic backsliding: Mexico's 2007 electoral reform''
+            \emph{Taiwan Journal of Democracy}
+            vol.\ 8, no.\ 1, pp.\ 31--56 (\textbf{TaiwÃ¡n}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/estevezEtalElecStud/serraElecRefMexico2012tjd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{hdzhdzGeoespacialElec2015} (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarRomero2007rcp/hdzhdzGeoespacialElecFCH2015.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{heisig2015} (\textbf{Alemania}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarRomero2007rcp/heisig2015.pdf}{prueba}
+
+        \label{ncites:magar.romero.rcp.2007} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Romero Foreign Affairs Esp 2007   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.romero.fae.2007} (\href{http://sites.google.com/site/emagar/MagarRomeroImpasseFAeE2007.pdf}{\footnotesize{ISSN:1665-1707}}). \textbf{\color{red}\ref{ncites:magar.romero.fae.2007}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1
+        \item Boonekamp, B. y Evrard, A. (2007)
+        ``Changement de rÃ©gime, changement de politique? Le cas de la rÃ©forme su secteur Ã©lectrique au Mexique'' \emph{Visages d'AmÃ©rique Latine} nÃºm.~5 (septiembre), pp.~61--70 (\textbf{Francia}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarRomeroFAE/beatrix.pdf}{prueba}
+
+        %  2
+        \item Vel\'azquez L\'opez Velarde, R. (2015)
+        ``Â¿Cooperaci\'on o conflicto? Relaciones ejecutivo--legislativo en el sexenio de Felipe Calder\'on'' \emph{Foro Internacional} vol.~55, n\'um.~219, pp.~171--216 (\textbf{M\'exico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarRomeroFAE/vellovel2015.pdf}{prueba}
+
+        % %  falta prueba, isabel pidiÃ³ el libro interbiblio
+        % \item \bibentry{heisig2015} (\href{http://ericmagar.com/cv/cites/magarRomeroFAE/.pdf}{\textbf{Alemania}}).
+
+% working paper, quizÃ¡s se publique
+% @ARTICLE {klinger2007,
+%     author  = "Klinger, Ulrike",
+%     title   = "Voto por voto, casilla por casilla? Democratic consolidation, political intermediation and the {M}exican election of 2006",
+%     journal = "ZENAF Arbeits- und Forschungsbericht",
+%     year    = "2007",
+%     number  = "1"
+% }
+
+        \label{ncites:magar.romero.fae.2007} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Huerta Magar 2006   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.huerta.2006} (\href{http://sites.google.com/site/emagar/mujereslegisladoras.pdf}{\footnotesize{ISBN:970-95099-0-X}}). \textbf{\color{red}\ref{ncites:magar.huerta.2006}~citas.}
+    \\ Hasta enero 2012, la versiÃ³n electrÃ³nica del libro habÃ­a sido descargada un total de 264 veces del sitio
+    internet de \href{http://www.unifemweb.org.mx/index.php?option=com_remository&Itemid=2&func=fileinfo&id=111}{ONU Mujeres}.
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1
+        \item RochÃ­n del RincÃ³n, J. (2007)
+        ``Derecho a la ParticipaciÃ³n PolÃ­tica''
+        en \emph{El adelanto de las mujeres a travÃ©s del trabajo parlamentario:
+        comentarios a las iniciativas de gÃ©nero en la LVII LVIII y LIX
+        Legislaturas de la CÃ¡mara de Diputados}
+        ColecciÃ³n GÃ©nero y Derecho vol.\ 4 CEAMEG,
+        MÃ©xico: CÃ¡mara de Diputados, pp.\ 106--21 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/huertaMagar/cdip.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{gonzalezMarin2008} (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/huertaMagar/gonzalezMarin2008.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{arroyo.etal2008} (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/huertaMagar/arroyo.etal2008.pdf}{prueba}
+
+        %  tengo pdf
+        \item FernÃ¡ndez Poncela, A.M. (2011) ``Las cuotas de gÃ©nero y la representaciÃ³n polÃ­tica femenina en MÃ©xico y AmÃ©rica Latina''
+            \emph{Argumentos UAM-X} aÃ±o 24, nÃºm.\ 66, pp. 247--74 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/huertaMagar/fdzPoncela2011.pdf}{prueba}
+
+         %  tengo pdf
+        \item \bibentry{martinez.garridoRepresentacionDescSustMx2013rms} (\textbf{MÃ©xico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/huertaMagar/martinez.garridoRepresentacionDescSustMx2013rms.pdf}{prueba}
+
+        \label{ncites:magar.huerta.2006} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Bully Pulpits 2001   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.2001} (\href{http://sites.google.com/site/emagar/MagarDiss.pdf}{\footnotesize{obtÃ©nla}}). \textbf{\color{red}\ref{ncites:magar.2001}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %#2 tengo pdf chafa
+        \item Negretto, G.L. (2002) ``Â¿Gobierna SÃ³lo el Presidente?: Poderes de Decreto y DiseÃ±o Institucional en Brasil y Argentina'' \emph{Desarrollo EconÃ³mico} vol.\ 42, nÃºm.\ 167, pp.\ 377--404  (\textbf{Argentina}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/negretto.pdf}{prueba}
+
+        %#1 tengo pdf
+        \item Nacif, B. (2004) ``Las relaciones entre los poderes ejecutivo y
+        legislativo en MÃ©xico tras el fin del presidencialismo''
+        \emph{PolÃ­tica y Gobierno} vol.\ 11, nÃºm.\ 1, pp.\ 9--43  (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/Benito_Nacif_p-9-42.pdf}{prueba}
+
+        %#3 tengo pdf chafa
+        \item Cameron, C. y McCarty, N. (2004) ``Models of vetoes and veto
+        bargaining'' \emph{Annual Review of Political Science} vol.\ 7, pp.\ 409--35
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/cammc.pdf}{prueba}
+
+        %#4 tengo pdf chafa
+        \item Negretto, G.L. (2004) ``Government capacities and
+        policy making by decree in Latin America: The cases of Brazil and
+        Argentina'' \emph{Comparative Political Studies} vol.\ 37, nÃºm.\ 5, pp.\ 531--62
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/neg2.pdf}{prueba}
+
+        %#5 tengo pdf
+        \item Cox, G.W. y McCubbins, M.D. (2005)
+        \emph{Setting the Agenda: Responsible Party Government in the US House of Representatives} New
+        York: Cambridge University Press (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/coxmcS.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{pachon2008phd} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/BullyPulpits/pachon2008phd.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{mejia.2009} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/BullyPulpits/mejia.pdf}{prueba}
+
+        %#6 tengo pdf
+        \item Indridason, I. (2011) ``Executive veto power and credit claiming: Comparing the effects of the line-item veto and the package veto''
+            \emph{Public Choice} vol.\ 146, nÃºms.\ 3--4, pp.~375--94 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/indridasson2011pubcho.pdf}{prueba}
+
+        %#7 tengo pdf
+        \item Palanza, V. and Sin, G. (2013) ``Veto Bargaining and the Legislative Process in Multiparty Presidential Systems.'' \emph{Comparative Political Studies} (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/palanza.sin2013jpla.excerpts.pdf}{prueba}
+
+        %#8 tengo pdf
+        \item Palanza, V. and Sin, G. (2013). ``Item Vetoes and Attempts to Override Them in Multiparty Legislatures.'' \emph{Journal of Politics in Latin America} vol.~5 n\'um.~1 (\textbf{Alemania}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/BullyPulpits/sin.palanza2014cps.excerpts.pdf}{prueba}
+
+
+        \label{ncites:magar.2001} % place this label after last item to record the number of cites for cross-referencing
+
+    % Chris Den Hartog and Nate Monroe (2011) Agenda Setting in the US Senate: Costly Consideration and Majority Party Advantage, CUP.
+
+    % FALSO: NO ME CITA  \item Matthew S.\ Shugart (2007) ``Comparative Executiveâ€“Legislative Relations: Hierarchies vs.\ Transactions in Constitutional Design'' in R.A.W. Rhodes, Sarah Binder, and Bert Rockman (eds.) \emph{Oxford Handbook of Political Institutions}, Oxford University Press.
+
+    % PUBLISHED AS CHAPTER? \item David Samuels and Kent Eaton, Presidentialism And, Or, and Versus Parliamentarism: The State of the Literature and an Agenda for Future Research Conference on Consequences of Political Institutions in Democracy, Duke University, April 5-7, 2002. http://www.quezon.ph/wp-content/uploads/2006/09/Samuels-Eaton.pdf
+
+    % \item Juan Andres Moraes y Eric Magar. COALICION Y RESULTADOS: APROBACION Y DURACION DEL TRAMITE, PARLAMENTARIO EN URUGUAY (1985-2000)* Revista Uruguaya de Ciencia Política - Vol. 17 N 1 - ICP â€“ Montevideo
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Weldon Veto 2001   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.weldon.2001} (\href{http://ssrn.com/abstract=1991099}{\footnotesize{obtÃ©nlo}}). \textbf{\color{red}\ref{ncites:magar.weldon.2001}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item MarvÃ¡n Laborde, I. (2004)
+        ``Â¿Crisis constitucional o confusiÃ³n?'' \emph{Reforma} 27 de noviembre (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/marvan.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item Lujambio, A. (2004) ``Cuatro sobre el veto''
+        \emph{Reforma} 6 de diciembre (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/luj.pdf}{prueba}
+
+        %  3 tengo pdf
+        \item Silva Herzog MÃ¡rquez, J. (2004) ``La presidencia en
+        juego'' \emph{Reforma} 6 de diciembre (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/jshm.pdf}{prueba}
+
+        %  4 tengo pdf
+        \item Molinar Horcasitas, J. (2004)
+        ``El veto'' \emph{El Universal} 24 de noviembre (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/moli.pdf}{prueba}
+
+        %  5 tengo pdf
+        \item DÃ­az Rebolledo, J. (2005)
+        ``Los determinantes de la indisciplina partidaria: apuntes sobre la conexiÃ³n electoral en el Congreso mexicano, 2000--2003''
+        \emph{PolÃ­tica y Gobierno} vol.\ 12, nÃºm.\ 2, pp.\ 313--30 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/diazrebolledo2005pyg.pdf}{prueba}
+
+        %  6 tengo pdf
+        \item Tsebelis, G. y AlemÃ¡n, E. (2005)
+        ``Presidential conditional agenda setting in Latin America'' \emph{World Politics} vol.\ 57 (abril), pp.\ 396--420 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarWeldonVeto/tsebal.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{diazRebolledoIndisciplinaCongMx2005pyg} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/diazRebolledoIndisciplinaCongMx2005pyg.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{casarSinMay2008} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/casarSinMay2008pyg.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{bejarQuienLegisla2012} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/bejarDescentraLegis2012rms.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{coronel.zamichiei2012} (\textbf{Argentina}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/coronelZamichiei2012.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{casarSinMay2013} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/casarSinMay2013pyg.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{coronel.zamichiei2013} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarWeldonVeto/coronelZamichiei2013.pdf}{prueba}
+
+        \label{ncites:magar.weldon.2001} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Elusive Authority Arg 2001   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    Eric Magar (2001)
+    \href{http://ssrn.com/abstract=1400408}{``The Elusive Authority of Argentina's Congress: Decrees,
+    Statutes, and Veto Incidence, 1983--1994''} (agosto). \textbf{\color{red}\ref{ncites:magarArgDecrees2001}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  3
+        \item Negretto, G.L. (2002)
+        ''Â¿Gobierna solo el Presidente? Poderes de decreto y diseÃ±o institucional en Brasil y Argentina'' \emph{Desarrollo EconÃ³mico}
+        vol.\ 42, nÃºm.\ 167, pp.\ 377-404 (\textbf{Argentina}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/decreeArg/negre2.pdf}{prueba}
+
+        %  2
+        \item Negretto, G.L. (2004)
+        ''Government Capacities and Policy Making in
+        Decree in Latin America: The Cases of Brazil and Argentina''
+        \emph{Comparative Political Studies} vol.\ 37, nÃºm.\ 5, pp.\ 531--62 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/decreeArg/negre.pdf}{prueba}
+
+        %  1
+        \item Muno, W. (2005)
+        \emph{Reformpolitik in jungen Demokratien:
+        Vetospieler, Politikblockaden und Reformen in Argentinien, Uruguay und
+        Thailand} Wiesbaden: VS Verlag fÃ¼r Sozialwissenschaften, 265 pp.\ (\textbf{Alemania}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/decreeArg/muno.pdf}{prueba}
+
+        \label{ncites:magarArgDecrees2001} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Amorim Magar 2000   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{amorim.magar.2000} (\href{http://ssrn.com/abstract=1991086}{\footnotesize{get it}}). \textbf{\color{red}\ref{ncites:amorim.magar.2000}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  tengo pdf
+        \item \bibentry{alcantara.sanchezVeto2001} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/alcantara.sanchezVeto2001pl.pdf}{prueba}
+
+        %  1 tengo pdf
+        \item \bibentry{cheibub.etal.2004} (\textbf{Reino Unido}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/cheibubetalCoalSuccess2004bjps.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{garciaMonteroActividadLegisAL2007} (\textbf{Alemania}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/garciaMonteroActividadLegis2007.pdf}{prueba}
+
+        %  3 revisar que el pdf cubra esta prueba
+        \item \bibentry{garcia.montero.presidentes.2009} (\textbf{EspaÃ±a}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/magarMoraesRUCP/garciamontero.pdf}{prueba}
+%%        ojo: tengo algunas pÃ¡ginas en cita Magar+Moraes RUCP
+
+        %  2 subir pdf
+        \item \bibentry{saiegh.2011} (\textbf{Reino Unido}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/saieghRulingStatute2011excerpt.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{santos.etal.controlAgenda.2014} (\textbf{Chile}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/amorimMagarVenezuela/santos.perezLinan.GarMonteroControlPres2014rcp.pdf}{prueba}
+
+        \label{ncites:amorim.magar.2000} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+%    \item \href{http://ssrn.com/abstract=1400402}{``The Value of Majority Status in the US House''} con Gary W.\ Cox (mayo 1999).
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   In Middlebrook's book 2000   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    ``National Election Results for Argentina, Brazil, Chile, Colombia, El Salvador, Peru, and
+%    Venezuela during the 1980s and 1990s'' con Kevin J.\ Middlebrook, apÃ©ndice estadÃ­stico en
+%    \emph{Conservative Parties, the Right, and Democracy in Latin America} coordinado por
+%    Kevin J.\ Middlebrook (Baltimore: Johns Hopkins University Press, 2000).
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Cox Magar APSR 1999    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{cox.magar.1999} (\href{http://sites.google.com/site/emagar/CoxMagarAPSR.pdf}{\footnotesize{ISSN:0003-0554}}). \textbf{\color{red}\ref{ncites:cox.magar.1999}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  3 tengo pdf
+        \item Shoch, J. (2000)
+        ``Contesting globalization: Organized labor, NAFTA, and the 1997 and 1998 Fast-Track fights'' \emph{Politics \& Society} vol.\ 28, nÃºm.\ 1, pp.\ 119--50  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/shoch.pdf}{prueba}
+
+        %  1 tengo pdf
+        \item Hart, D.M. (2001)
+        ``Why do some firms give? Why do some give a lot?: High-tech PACs, 1977--1996'' \emph{Journal of Politics} vol.\ 63, nÃºm.\ 4, pp.\ 1230--49
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/hart.pdf}{prueba}
+
+        % %  2 tengo pdf
+        % \item Pereira, C. y Renno, L. (2001)
+        % ``O que Ã‰ que o Reeleito Tem? Dinamicas PolÃ­tico-Institucionais Locais e Nacionais nas EleiÃ§aes de 1998 para a Camara dos Deputados'' \emph{Dados-Revista de Ciencias Sociais} vol.\ 44, nÃºm.\ 2, pp.\ 323--62 (\textbf{Brasil}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/perRenno.pdf}{prueba}
+
+       %  28 tengo pdf
+       \item Pereira, C. y RennÃ³, L. (2001) ``O que Ã© que o Reeleito Tem? DinÃ¢micas PolÃ­tico-Institucionais locais e nacionais nas eleiÃ§{\~oes de 1988 para a CÃ¢mara dos Deputados''} \emph{Dados} vol.\ 44 nÃºm.\ 2, pp.\ 323--62 (\textbf{Brasil}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/PereiraRennoDados2001.pdf}{prueba}
+
+        %  4 tengo pdf
+        \item Grant, J.T. y Rudolph, T.J. (2002)
+        ``To Give or Not to Give: Modeling Individuals' Contribution Decisions''
+        \emph{Political Behavior} vol.\ 24, nÃºm.\ 1, pp.\ 31--54 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/grant.pdf}{prueba}
+
+        %  5 tengo pdf
+        \item Brady, D.W. y McCubbins, M.D. (2002)
+        \emph{Party, Process, and Political Change in Congress: New Perspectives form the History of
+        Congress} Palo Alto, CA: Stanford University Press  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/brady.pdf}{prueba}
+
+        %  6 tengo pdf
+        \item Gamm, G. y  Huber, J.D. (2002)
+        ``Legislatures as political
+        institutions: Beyond the contemporary Congress'' en \emph{Political
+        Science: The State of the Discipline} coord.\ Ira Katznelson y Helen
+        V.\ Millner, New York: WW Norton  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/gamm.pdf}{prueba}
+
+        %  8 tengo pdf
+        \item Taylor, A.J. (2003)
+        ``Conditional Party Government and Campaign Contributions: Insights
+        from the Tobacco and Alcoholic Beverages Industries'' \emph{American
+        Journal of Political Science} vol.\ 47, nÃºm.\ 2, pp.\ 293--304  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/taylor.pdf}{prueba}
+
+        %  10 tengo pdf
+        \item Heberlig, E.S. (2003)
+        ``Congressional Parties, Fundraising, and Committee Ambition'' \emph{Political Research Quarterly} vol.\ 56, nÃºm.\ 2, pp.\ 151--61
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/heber.pdf}{prueba}
+
+        %  11 tengo pdf
+        \item Pereira, C. y Renno, L. (2003)
+        ``Successful re-election strategies in Brazil: the electoral impact of distinct
+        institutional incentives'' \emph{Electoral Studies} vol.\ 22, nÃºm.\ 3, pp.\
+        425--48  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/perRenno2.pdf}{prueba}
+
+        %  19 tengo pdf
+        \item Taylor, A.J. (2003)
+        ``Conditional Party Government and Campaign
+        Contributions: Insights from the Tobacco and Alcoholic Beverage Industries''
+        \emph{American Journal of Political Science}
+        vol.\ 47, nÃºm.\ 2, pp.\ 293--304 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/taylos2.pdf}{prueba}
+
+        %  9 tengo pdf
+        \item Apollonio, D.E. y La Raja, R.J. (2004)
+        ``Who Gave Soft Money?
+        The Effect of Interest Group Resources on Political Contributions''
+        \emph{Journal of Politics} vol.\ 66, nÃºm.\ 4, pp.\ 1134--54  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/apolRaja.pdf}{prueba}
+
+        %  34 tengo pdf
+        \item Kihong Eom (2004)
+        ``Campaign Contribution
+        Limits and Special Interest Groups in the United States'' \emph{DBPIA} vol.\
+        38, nÃºm.\ 3, pp.\ 459--82  (\textbf{Corea del Sur}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/eom.pdf}{prueba}
+
+        %  20 tengo pdf
+        \item Kroszner, R.S. y Stratmann, T. (2005)
+        ``Corporate Campaign Contributions, Repeat Giving, and the Rewards to
+        Legislator Reputation''
+        \emph{The Journal of Law and Economics} vol.\ 48 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/kros.pdf}{prueba}
+
+        %  13 tengo pdf
+        \item Mixon Jr.\, F.G., Crocker, C.C. y Black, T. (2005)
+        ``Pivotal Power Brokers:
+        Theory and Evidence on Political Fundraising'' \emph{Public Choice} vol.\ 123,
+        nÃºms. 3--4, pp.\ 477--93  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/mixon.pdf}{prueba}
+
+        %  16 tengo pdf
+        \item Jenkins, J.A., Crispin, M.H. y Carson, J.L. (2005)
+        ``Parties as procedural coalitions in Congress: an examination of differing career tracks''
+        \emph{Legislative Studies Quarterly} vol.\ 30, nÃºm.\ 3, pp.\ 365--90  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/jenkinsetal2005lsq.pdf}{prueba}
+
+       %  29 tengo pdf
+       \item Apollonio, D.E. (2005) ``Predictors of Interest Group Lobbying Decisions'' \emph{The Forum} vol.\ 3 nÃºm.\ 3 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/Apollonio2005.pdf}{prueba}
+
+       %  30 tengo pdf
+       \item Heberlig, E.S. y Larson, B.A. (2005) ``Redistributing Campaign Funds by U.S.\ House Members: The Spiraling Costs of the Permanent Campaign'' \emph{Legislative Studies Quarterly} vol.\ 30. nÃºm.\ 4. pp.\ 597--624 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/heberlig+larson2005lsq.excerpt.pdf}{prueba}
+
+        %  12 tengo pdf
+        \item Eom, K. y Gross, D.A. (2006)
+        ``Contribution Limits and Disparity in Contributions between
+        Gubernatorial Candidates'' \emph{Political Research Quarterly} vol.\ 59, nÃºm.\
+        1, pp.\ 99--110  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/eom1.pdf}{prueba}
+
+        %  15 tengo pdf
+        \item Miquel, G.P. y Snyder, J.M. (2006)
+        ``Legislative
+        Effectiveness and Legislative Careers'' \emph{Legislative Studies
+        Quarterly} vol.\ 31, nÃºm.\ 3, pp.\ 347--81 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/padro.pdf}{prueba}
+
+       %  32 tengo pdf
+       \item Apollonio, D.E. y La Raja, R.J. (2006) ``Term Limits, Campaign Contributions, and the Distribution of Power in State Legislatures'' \emph{Legislative Studies Quarterly} vol.\ 31 nÃºm.\ 2 pp.\ 259--81 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/apollonio+laraja2006lsq.pdf}{prueba}
+
+        %  14 tengo pdf
+        \item Eom, K. y Gross, D.A. (2007)
+        ``Democratizing Effects of Campaign Contribution Limits in Gubernatorial Elections'' \emph{Party Politics} vol.\ 13, nÃºm.\ 6, pp.\ 695--720
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/eom2.pdf}{prueba}
+
+       %  7 tengo pdf
+       \item Steen, J.A. (2008) ``Financing the 2008 congressional elections: A prospective guide'' \emph{The Forum} vol.\ 6 nÃºm.\ 1 pp.\ 1--19 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/steen2008.pdf}{prueba}
+
+        %  22 tengo pdf
+        \item Franz, M.M. (2008)
+        \emph{Choices and changes:
+        interest groups in the electoral process}
+        Philadelphia: Temple University Press (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/franz.pdf}{prueba}
+
+        %  23 tengo pdf
+        \item Groeling, T. y Baum, M.A. (2008)
+        ``Crossing the Waterâ€™s Edge: Elite Rhetoric,
+        Media Coverage and the Rally-Round-the-Flag'' \emph{The Journal of Politics} vol.\ 70,
+        nÃºm.\ 4, pp.\ 1065--85 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/groe.pdf}{prueba}
+
+        %  17 tengo pdf
+        \item Ensley, M.J. (2009)
+        ``Individual campaign contributions and
+        candidate ideology'' \emph{Public Choice} vol.\ 138, nÃºms.\
+        1--2, pp.\ 221--38  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/ensley.pdf}{prueba}
+
+        %  18 tengo pdf
+        \item Eggers, A.C. y Hainmueller, J. (2009)
+        ``MPs for Sale? Returns to Office in Postwar British Politics''
+        \emph{American Political Science Review} vol.\ 103, nÃºm.\ 4, pp.\ 513--33  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/eggers.pdf}{prueba}
+
+        %  21 tengo pdf
+        \item Baum, M.A. y Groeling, T. (2009)
+        ``Shot by the Messenger: Partisan Cues and Public Opinion
+        Regarding National Security and War''
+        \emph{Political Behavior}  vol.\ 31, nÃºm.\ 2, pp.\ 157--86 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/baum.pdf}{prueba}
+
+        %  25 tengo pdf
+        \item Herrnson, P.S. (2009) ``The Roles of Party Organizations, Party-Connected Committees, and Party Allies in Elections'' \emph{The Journal of Politics} vol.\ 71, nÃºm.\ 4, pp.\ 1207--4 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/herrnsonPartyOrginEls2009jop.pdf}{prueba}
+
+        %  26 tengo pdf
+        \item Groeling, T. y Baum, M.A. (2009) ``Journalists' Incentives and Media Coverage of Elite Foreign Policy Evaluations''
+            \emph{Conflict Management and Peace Science} vol.\ 26, nÃºm.\ 5, pp.\ 437--470 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/groeling+baumJournalists2009.pdf}{prueba}
+
+       %  27 tengo pdf
+       \item Kim, H. y Phillips, J.H. (2009) ``Dividing the Spoils of Power: How are the benefits of majority party status distributed in the US legislatures?'' \emph{State Politics and Policy Quarterly} vol.\ 9 nÃºm.\ 2 pp.\ 125--50 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/kim+philips.pdf}{prueba}
+
+        %  24 tengo pdf
+        \item Engstrom, E.J. y Ewell, W. (2010)
+        ``The impact of unified party government on campaign contributions'' \emph{Legislative Studies Quarterly} vol.\ 35, nÃºm.\ 4, pp.\ 543--69 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/eng.pdf}{prueba}
+
+       %  31 tengo pdf
+       \item Berry, C.R., Burden, B.C., y Howell, W.G. (2010) ``The President and the Distribution of Federal Spending'' \emph{American Political Science Review} 104: 783-99 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/berryetal2010apsr.pdf}{prueba}
+
+       %  33 tengo pdf
+       \item Parker, G. y Dabros, M. (2011) ``Last-period problems in legislatures'' \emph{Public Choice}, online publication \url{http://dx.doi.org/10.1007/s11127-011-9770-6}, pp. 1--18 (\textbf{PaÃ­ses Bajos}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/parker+dabros2011pubcho.excerpt.pdf}{prueba}
+
+        %       
+        \item Boehmke, F.J. y  Witmer, R, (2012) ``Indian Nations as Interest Groups: Tribal Motivations for Contributions to U.S. Senators'' \emph{Political Research Quarterly} vol.~65, nÃºm.~1, 179--91  (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/boehmkeSenateContrib2012prq.pdf}{prueba}
+
+        %       
+        \item Watson, D. (2012) ``Political institutions and social spending changes in the world, 1998--2009'' PhD. Dissertation, Texas tech University (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/watson2012.pdf}{prueba}
+
+        %  36 tengo pdf
+        \item \bibentry{aleman.calvo.nwtworkInit.2013} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/coxMagar/aleman.calvo.networkInitiation2013ps.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{bonicaIdeolMarketplace2013ajps} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/coxMagar/bonicaIdeolMarketplace2013ajps.pdf}{prueba}
+
+        %  35 tengo pdf
+        \item Curry, J.M., Herrnson, P.S. y Taylor, J.A. (2013)
+        ``The impact of district magnitude on campaign fundraising''
+        \emph{Legislative Studies Quarterly} vol.\ 38 nÃºm.\ 4, pp.\ 517--43 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/curryEtAl2013lsq.excerpts.pdf}{prueba}
+
+        %  tengo pdf
+        \item Fortunato, D. (2013)
+        ``Majority Status and Variation in Informational Organization''
+        \emph{Journal of Politics} vol.\ 75 nÃºm.\ 4, pp.\ 937--52 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/fortunato2013majority.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{jenkins.monroeBuyNegAgenda2012ajps} (\textbf{EE.UU.}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/coxMagar/jenkins.monroeBuyNegAgenda2012ajps.pdf}{prueba}
+
+        %
+        \item Rocca, M.S. and Gordon S.B. (2013) ``The Position-taking Value of Bill Sponsorship in Congress'' \emph{Political Research Quarterly} vol.\ 62 nÃºm.\ 1 pp. 387--97 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/rocca.gordonPosTakSponsoring2010prq.pdf}{prueba}
+
+        %
+        \item Rocca, M.S. and Gordon, S.B. (2013) ``Earmarks as a Means and an End: The Link between Earmarks and Campaign Contributions'' \emph{The Journal of Politics} 75(1):241--53 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/rocca.gordonEarmarks2013jop.pdf}{prueba}
+
+        %
+        \item Gimpel, J.G. (2014) ``Business Interests and the Party Coalitions Industry Sector Contributions to U.S. Congress'' \emph{American Politics Research} 42(6):1034--76 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/gimpel.etalBusPacs2014apr.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{castroAccountBrasil2014opPub} (\textbf{Brasil}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/coxMagar/castroAccountBrasil2014opPub.pdf}{prueba}
+
+        %
+        \item Duch, R. et al. (2015) ``Responsibility attribution for collective decision makers'' \emph{American Journal of Political Science} 59(2):372--89 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/duch.etalAttribution2015ajps.pdf}{prueba}
+
+        %       
+        \item Kanthack, K. (2015) ``Crystal Elephants and Commitee Chairs: Campaign Contributions and Leadership Races in the U.S.\ House of Representatives'' \emph{American Politics Research} vol.\ 35 nÃºm.\ 3 pp.\ 389--406 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/kanthak.ContributionsChairs2007apr.pdf}{prueba}
+
+        %  tengo pdf
+        \item Mancuso, W.P. y Speck, B.W. (2015)
+        ``Financiamento empresarial na elei{\c{c}}{\~a}o para deputado federal (2002--2010): determinantes e consequ{\^e}ncias''
+        \emph{Revista Teoria \& Sociedade} vol.\ 23 nÃºm.\ 2, pp.\ 103--25 (\textbf{Brasil}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/mancuso2015financiamento.pdf}{prueba}
+
+        %       
+        \item Reynolds, M.E. (2015) ``Exceptions to the Rule: Majoritarian Procedures and Majority Party Power in the United States Senate'' PhD. Dissertation, University of Michigan (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/reynolds2015.pdf}{prueba}
+
+        %       
+        \item Richman, J. (2015) ``The Electoral Costs of Party Agenda Setting: Why the Hastert Rule Leads to Defeat'' \emph{Journal of Politics} vol.\ 77 nÃºm.\ 4 pp.\ 1129--41 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/richmanEllCosts2015jop.pdf}{prueba}
+
+
+        \label{ncites:cox.magar.1999} % place this label after last item to record the number of cites for cross-referencing
+
+%       FALTAN PRUEBAS DE TODOS ESTOS
+% @book{jacobson2015politics,
+%   title={The politics of congressional elections},
+%   author={Jacobson, Gary C and Carson, Jamie L},
+%   year={2015},
+%   publisher={Rowman \& Littlefield}
+% }
+% @article{bonica2014mapping,
+%   title={Mapping the ideological marketplace},
+%   author={Bonica, Adam},
+%   journal={American Journal of Political Science},
+%   volume={58},
+%   number={2},
+%   pages={367--386},
+%   year={2014},
+%   publisher={Wiley Online Library}
+% }
+% @article{fu2015team,
+%   title={Team contests with multiple pairwise battles},
+%   author={Fu, Qiang and Lu, Jingfeng and Pan, Yue},
+%   journal={The American Economic Review},
+%   volume={105},
+%   number={7},
+%   pages={2120--2140},
+%   year={2015},
+%   publisher={American Economic Association}
+% }
+% @book{curry2015legislating,
+%   title={Legislating in the Dark: Information and Power in the House of Representatives},
+%   author={Curry, James M},
+%   year={2015},
+%   publisher={University of Chicago Press}
+% }
+% @article{carroll2013role,
+%   title={The role of party: The legislative consequences of partisan electoral competition},
+%   author={Carroll, Royce and Eichorst, Jason},
+%   journal={Legislative Studies Quarterly},
+%   volume={38},
+%   number={1},
+%   pages={83--109},
+%   year={2013},
+%   publisher={Wiley Online Library}
+% }
+% @article{akirav2014representatives,
+%   title={What do representatives produce? Work profiles of representatives},
+%   author={Akirav, Osnat},
+%   journal={Party Politics},
+%   pages={1â€“11},
+%   year={2014},
+%   publisher={SAGE Publications}
+% }
+% @article{clemens2015earmarks,
+%   title={Earmarks and Subcommittee Government in the US Congress},
+%   author={Clemens, Austin and Crespin, Michael and Finocchiaro, Charles J},
+%   journal={American Politics Research},
+%   volume={43},
+%   number={6},
+%   pages={1074--1106},
+%   year={2015},
+%   publisher={SAGE Publications}
+% }
+% @article{barber2016donation,
+%   title={Donation Motivations Testing Theories of Access and Ideology},
+%   author={Barber, Michael},
+%   journal={Political Research Quarterly},
+%   pages={1065912915624164},
+%   year={2016},
+%   publisher={SAGE Publications}
+% }
+% @article{bonica2013avenues,
+%   title={Avenues of Influence: On the Political Expenditures of Corporations and Their Directors and Executives},
+%   author={Bonica, Adam},
+%   journal={SSRN 2313232 Electronic Journal},
+%   year={2013}
+% }
+% @article{fouirnaies2016interest,
+%   title={How Do Interest Groups Seek Access to Committees?},
+%   author={Fouirnaies, Alexander and Hall, Andrew B},
+%   journal={SSRN 2719930 Electronic Journal},
+%   year={2016}
+% }
+%
+        % % tengo pdf de early version
+        % \item Akirav, O. (2014) ``What do representatives produce? Work profiles of representatives'' \emph{Party Politics} xx(x):xx--xx (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/coxMagar/akirav.pdf}{prueba}
+%
+%       Congressional Parties, Institutional Ambition, and the Financing of Majority Control by Eric S. Heberlig and Bruce A. Larson Michigan UNiversity Press 2013
+%
+%       \item Kihong Eom y Donald A. Gross (2007) ``Democratization Effects of Campaign Contribution Limits in Gubernatorial Elections'' \emph{Party Politics} vol.\ 13 nÃºm.\ 6 pp.\ 695--720 (\textbf{EE.UU.})
+%
+%       \item J Shoch (2000) ``Contesting Globalization: Organized Labor, NAFTA, and the 1997 and 1998 fast-track fights'' \emph{Politics \& Society} vol.\ 28 nÃºm.\ 1 pp.\ 119--50 (\textbf{EE.UU.})
+%
+%        \item Randall S. Kroszner y Thomas Stratmann (2005) ``Corporate Campaign
+%        Contributions, Repeat Giving, and the Rewards to Legislator Reputation''
+%        \emph{Journal of Law and Economics} vol.\ 48, nÃºm.\ 1  (\textbf{EE.UU.})
+%
+%        \item Anthony Corrado, Thomas E.\ Mann y Trevor Potter
+%        (coords.) (2003) \emph{Inside the Campaign Finance Battle: Court Testimony
+%        on the New Reforms} Washington DC: Brookings (\textbf{EE.UU.})
+%
+%        \item Andrew J.\ Taylor (2005) \emph{Elephant's Edge: The Republicans as a Ruling
+%        Party} Westport CT: Praeger (\textbf{EE.UU.})
+%
+%        \item Mathew D.\ McCubbins (2005)
+%        ``Legislative Process and the Mirroring Principle'' en \emph{Handbook of New
+%        Institutional Economics} coord.\ Claude Menard y Mary M.\ Shirley.
+%        Springer (\textbf{EE.UU.})
+%
+%        \item Aldrich, John H., and David W. Rohde. 2000. â€œThe Consequences of Party Organization in the House: The Role of Majority and Minority Parties in Conditional Party Government. In Polarized Politics: Congress and the President in a Partisan Era, ed. Jon Bond and Richard Fleisher. Washington, DC: CQ Press.
+%
+%        SE PUBLICÃ“? \item Jamie Carson, Michael H. Crespin, Comparing the Effects of Legislative, Commission, and Judicial Redistricting Plans on U.S. House Elections, 1972-2002
+%
+%        \item David C.\ Parker (2008) \emph{The Power of Money in Congressional
+%        Campaigns} University of Oklahoma Press (\textbf{EE.UU.})
+%
+%        \item Choices and Changes: Interest Groups in the Electoral Process MM Franz - 2008 - TEMPLE UNIVERSITY PRESS
+%
+%        \item Sean M.\ Theriault The Power of the People: Congressional Competition, Public Attention, and Voter Retribution  - ohiostatepress.org
+%
+
+%%  Por alguna razÃ³n, si meto esto jode el tamaÃ±o de la siguiente publicaciÃ³n...
+%%        \end{CitasMiTrabajo}
+%%
+%%    \tiny{\textbf{Citas firmadas por autores de los cuales alguno es autor del trabajo:}}%\\ [-25pt]
+%%
+%%        \begin{CitasMiTrabajo}
+%%
+%%        %  1
+%%        \item Gary W.\ Cox y Keith T.\ Poole (2002) ``On measuring
+%%        partisanship in roll-call voting: The US House of Representatives,
+%%        1877-1999'' \emph{American Journal of Political Science} vol.\ 46, nÃºm.\ 3, pp.\
+%%        477--89  (\textbf{EE.UU.})
+%%
+%%        %  2
+%%        \item Gary W.\ Cox y Mathew D.\ McCubbins (2005) \emph{Setting
+%%        the Agenda: Responsible Party Government in the US House of
+%%        Representatives} New York: Cambridge University Press  (\textbf{EE.UU.})
+%%
+%%        %  3
+%%        \item Gary W.\ Cox y Jonathan Katz (2002) \emph{Elbridge Gerry's Salamander:
+%%        The Electoral Consequences of the Reapportionment Revolution} New
+%%        York: Cambridge University Press  (\textbf{EE.UU.})
+%%
+%%        %  4
+%%        \item Gary W.\ Cox y Mathew D.\ McCubbins (2002) ``Agenda power in the U.S.
+%%        House of Representatives 1877--1986'' in \emph{Party, Process, and
+%%        Political Change in Congress}, coord.\ David W.\ Brady y
+%%        Mathew D.\ McCubbins, Palo Alto: Stanford University Press  (\textbf{EE.UU.})
+%%
+%%        %  5
+%%        \item Gary W.\ Cox y William C.\ Terry (2008)
+%%        ``Legislative Productivity in the 93rd--105th Congresses''
+%%        \emph{Legislative Studies Quarterly} vol.\ 33, nÃºm.\ 4, pp.\ 603--18 (\textbf{EE.UU.})
+
+        \end{CitasMiTrabajo}
+
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%   MRS 1998   %%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.etal.1998} (\href{http://sites.google.com/site/emagar/MRScps1998.pdf}{\footnotesize{ISSN:0010-4140}}). \textbf{\color{red}\ref{ncites:magar.etal.1998}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item Siavelis, P. (1997)
+        ``Continuity and Change in the Chilean Party System: On the Transformational Effects of Electoral
+        Reform''
+        \emph{Comparative Political Studies} vol.\ 30, nÃºm.\ 6, pp.\ 651--74
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/siavelis97.pdf}{prueba}
+
+        %  3 tengo pdf chafa
+        \item Jones, M.P. (1999) ``Assessing the effectiveness of
+        gender quotas in open-list proportional representation electoral
+        systems'' \emph{Social Science Quarterly} vol.\ 80, nÃºm.\ 2, pp.\ 341--55
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/jonesSSQ99.pdf}{prueba}
+
+        %26 tengo pdf
+        \item Carey, J.M. (1999)
+        ``Partidos, coaliciones y el Congreso chileno en los aÃ±os noventa''
+        \emph{PolÃ­tica y Gobierno}
+        vol.\ 6, nÃºm.\ 2, pp.\ 365--405   (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/careyPartCongChile1999pyg.excerpt.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item Siavelis, P. (2000) \emph{The President and Congress in
+        Postauthoritarian Chile: Institutional Constraints to Democratic
+        Consolidation}, University Park PA: Penn State University Press
+        (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/siavelisPdtCongPostAutChi.pdf}{prueba}
+
+        %32 tengo pdf
+        \item Navia, P. y Joignant, A. (2000)
+        ``Las elecciones presidenciales de 1999:
+        La participaciÃ³n electoral y el nuevo votante chileno'' en \emph{Chile 1990--2000:
+        Nuevo Gobierno, desafÃ­os de la reconciliaciÃ³n} coord.\ Franscisco Rojas,
+        Santiago: FLACSO (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/naviaJoignantFlacso.pdf}{prueba}
+
+        %  11 tengo pdf
+        \item Tironi, E., AgÃ¼ero, F. y Valenzuela, E. (2001)
+        ``Clivajes PolÃ­ticos en Chile: Perfil SociolÃ³gico de los Electores de Lagos y LavÃ­n''
+        \emph{Revista Perspectivas} vol.\ 73 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/tironietal2001.pdf}{prueba}
+
+        %  4 tengo pdf
+        \item Carey, J.M. (2002)
+        ``Parties, coalitions, and the Chilean Congress in the 1990s''
+        en \emph{Legislative Politics in Latin America}
+        coord. por Scott Morgenstern y Benito Nacif, New York: Cambridge
+        University Press (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/careyInMorgNacif.pdf}{prueba}
+
+        %  5 tengo pdf chafa
+        \item Calvo, E. y Abal Medina, J.M. (2002)
+        ``Institutional
+        gamblers: majoritarian representation, electoral uncertainty, and the
+        coalitional costs of Mexico's hybrid electoral system''
+        \emph{Electoral Studies} vol.\ 21, nÃºm.\ 3, pp.\ 453--71 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/calvoMedina.pdf}{prueba}
+
+        %  6 tengo pdf
+        \item Geddes, B. (2002)
+        ``The Great Transformation in the
+        Study of Politics in Developing Countries'' en \emph{Political Science: The
+        State of the Discipline} coord. Ira Katznelson y Helen V. Millner,
+        New York: WW Norton, pp.\ 342--70  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/geddesStateOfDisc.pdf}{prueba}
+
+        %  7 tengo pdf
+        \item Siavelis, P. (2002)
+        ``The hidden logic of candidate selection
+        for Chilean parliamentary elections'' \emph{Comparative Politics}
+        vol.\ 34, nÃºm.\ 4, pp.\ 419--38 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/siavels2002cp.pdf}{prueba}
+
+        %  19 tengo pdf
+        \item Joignant, A. y Navia, P. (2003)
+        ``De la polÃ­tica de individuo a los hombres del partido: socializaciÃ³n, competencia polÃ­tica y penetraciÃ³n electoral
+        de la UDI (1989--2001)'' \emph{Estudios PÃºblicos} nÃºm.\ 89, pp.\ 134--71 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/joigNavia.pdf}{prueba}
+
+        %  8 tengo pdf
+        \item Siavelis, P. (2004)
+        ``Sistema electoral, desintegraciÃ³n de coaliciones y democracia en Chile: Â¿El fin de la ConcertaciÃ³n?''
+        \emph{Revista de Ciencia PolÃ­tica} vol.\ 24, nÃºm.\ 1, pp.\ 58--80  (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/siavelis2004rcp.pdf}{prueba}
+
+        %  9 tengo pdf
+        \item Pastor, D. (2004)
+        ``Origins of the Chilean Binominal Election System''
+        \emph{Revista de Ciencia PolÃ­tica} vol.\ 24, nÃºm.\ 1, pp.\ 38--57
+        (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/pastor2004rcp.pdf}{prueba}
+
+        %  10 tengo pdf
+        \item Crisp, B.F., Kanthak, K. y Leijonhufvud, J. (2004)
+        ``The Reputations Legislators Build: With Whom Should Representatives Collaborate?''
+        \emph{American Political Science Review} vol.\ 98, nÃºm.\ 4, pp.\ 703--16  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/crispEtAl.pdf}{prueba}
+
+        %  13 tengo pdf chafa
+        \item Richardson, L.E., Russell, B.E. y Cooper, C.A. (2004)
+        ``Legislative
+        Representation in a single-member versus multiple-number district system:
+        The Arizona state legislature'' \emph{Political Research Quarterly} vol.\ 57, nÃºm.\ 2,
+        pp.\ 337--44 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/richEtal.pdf}{prueba}
+
+        %  14 tengo pdf
+        \item Navia, P. (2004)
+        ``ParticipaciÃ³n electoral en Chile, 1988--2001''
+        \emph{Revista de Ciencia PolÃ­tica} vol.\ 24, nÃºm.\ 1, pp.\ 81--103 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/navia2004rcp.pdf}{prueba}
+
+        %  tengo pdf
+        \item Cabezas, J.M. y Navia, P. (2005)
+        ``Efecto del sistema binominal en el nÃºmero de candidatos y de partidos en elecciones legislativas en Chile, 1989--2001''
+        \emph{PolÃ­tica} vol.\ 45, primavera, pp.\ 29--51  (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/cabezas.naviaNcandBinomial2005.pdf}{prueba}
+
+        %  18 tengo pdf
+        \item Siavelis, P. (2005)
+        ``Los peligros de la ingenierÃ­a electoral (y de predecir sus efectos)''
+        \emph{PolÃ­tica} nÃºm.\ 45, pp.\ 9--28  (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/siavelis2005politica.pdf}{prueba}
+
+        %  12 tengo pdf
+        \item Navia, P. (2005)
+        ``La TransformaciÃ³n de Votos en EscaÃ±os: Leyes Electorales en Chile, 1833--2004''
+        \emph{PolÃ­tica y Gobierno} vol.\ 12, nÃºm.\ 2, pp.\ 233--76  (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/navia2005pyg.pdf}{prueba}
+
+        % %29 tengo pdf
+        % \item MH Blofield y L Haas (2005)
+        % ``Defining a Democracy: Reforming the
+        % laws on women's rights in Chile, 1990--2002'' \emph{Latin American
+        % Politics and Society} vol.\ 47, nÃºm.\ 3, pp.\ 35--68 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/blofieldHaas2.pdf}{prueba}
+
+        %  22 tengo pdf
+        \item Blofield, M.H. y Haas, L. (2005)
+        ``Defining a Democracy: Reforming the Laws on Women's Rights in Chile, 1990--2002'' \emph{Latin American
+        Politics \& Society} vol.\ 47, nÃºm.\ 3, pp.\ 35--68  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/blofieldHaas.pdf}{prueba}
+
+        %  15 tengo pdf
+        \item Calvo, E. y Micozzi, J.P. (2005)
+        ``The Governor's Backyard: A
+        Seat-Vote Model of Electoral Reform for Subnational Multiparty Races''
+        \emph{Journal of Politics} vol.\ 67, nÃºm.\ 4, pp.\ 1050-â€“74 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/calvoMicozzi.pdf}{prueba}
+
+        %  35 tengo pdf
+        \item Siavelis, P. (2005)
+        ``La lÃ³gica oculta de la selecciÃ³n de candidatos en las elecciones parlamentarias chilenas''
+            \emph{Estudios PÃºblicos}
+        nÃºm.\ 98, pp.\ 189--225 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/Siavelis2005logicaoculta.pdf}{prueba}
+
+        %25 tengo pdf
+        \item Haas, L. (2006)
+        ``The rules of the game: feminist policymaking in Chile''
+        \emph{PolÃ­tica}
+        vol.\ 46,
+        pp.\ 199â€“-225   (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/haas2006politica.pdf}{prueba}
+
+        %  23 tengo pdf
+        \item AlemÃ¡n, E. y Saiegh, S.M. (2007)
+        ``Legislative Preferences,
+        Political Parties, and Coalition Unity in Chile'' \emph{Comparative
+        Politics} vol.\ 39, nÃºm.\ 3, pp.\ (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/alemanSaiegh07.pdf}{prueba}
+
+        %  16 tengo pdf
+        \item Joignant, A. (2007)
+        ``Modelos, juegos y artefactos: supuestos, premisas e ilusiones de los estudios electorales y de sistemas de partidos
+        en Chile (1988--2005)'' \emph{Estudios PÃºblicos} nÃºm.\ 107, pp.\ 217--71  (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/joignant07.pdf}{prueba}
+
+        %  21 tengo pdf
+        \item Mardones, R. (2007)
+        ``The Congressional Politics of Decentralization: The Case of Chile'' \emph{Comparative
+        Political Studies} vol.\ 40, nÃºm.\ 3, pp.\ 333--58  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/mardones.pdf}{prueba}
+
+        %  17 tengo pdf
+        \item Morales, M. y Poveda, A. (2007)
+        ``El PDC: bases electorales, determinantes de adhesiÃ³n e impacto en las votaciones de R.\ Lagos Y M.\ Bachelet''
+        \emph{Estudios PÃºblicos} nÃºm.\ 107, pp.\ 132--66  (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/morales+povedapdcbases.pdf}{prueba}
+
+        %  20 tengo pdf
+        \item Zucco, C. (2007)
+        ``Where's the bias? A reassessment of the Chilean electoral system'' \emph{Electoral Studies} vol.\ 26, nÃºm.\ 2,
+        pp.\ 303--14  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/zucco.pdf}{prueba}
+
+        %27 tengo pdf
+        \item AlemÃ¡n, E. (2008)
+        ``Policy positions in the Chilean Senate: an analysis of coauthorship and roll call data''
+        \emph{Brazilian Political Science Review}
+        vol.\ 2, nÃºm.\ 2, pp.\ 74--92 (\textbf{Brasil}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/alemanCosponsorChile2008brjps.excerpt.pdf}{prueba}
+
+        %  24 tengo pdf
+        \item Bertelli, A. y Richardson, L.E. (2008)
+        ``Ideological extremism and electoral design: Multimember versus
+        single member districts'' \emph{Public Choice} vol. 137, pp.\
+        347â€“-68  (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/bertelli.pdf}{prueba}
+
+        %  37 tengo pdf
+        \item Botero Jaramillo, F. (2008)
+        ``Ambitious Career-Seekers: An Analysis of Career Decisions and Duration in Latin America'' tesis doctoral, University of Arizona, 183 pp.\ (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/Botero2008.pdf}{prueba}
+
+        % 34 tengo pdf
+        \item Izquierdo SÃ¡nchez, J.M., Morales Quiroga, M. and Navia Lucero, P. (2008)
+        ''Voto cruzado en Chile: Â¿Por quÃ© Bachelet obtuvo menos votos que la ConcertaciÃ³n en 2005?''
+        \emph{PolÃ­tica y Gobierno} vol.\ 15, nÃºm.\ 1, pp. 35--73 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/izquierdoetal2008pyg.pdf}{prueba}
+
+        %33 tengo pdf
+        \item Morales Quiroga, M. (2008)
+        ``La primera mujer presidenta de Chile: Â¿QuÃ© explicÃ³ el triunfo de Michelle Bachelet en 2005--6?''
+        \emph{Latin American Research Review} vol.\ 43, nÃºm.\ 1, pp.\ 7--32 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/morales2008larr.excerpt.pdf}{prueba}
+
+        %  
+        \item S. Giriki Thuo (2008)
+        ``OPTIMAL CANDIDATES LOCATION IN MULTICANDIDATE SPATIAL THEORY OF VOTING''
+        \emph{International Journal of Pure and Applied Mathematics} vol.\ 47 nÃºm.\ 4, pp.\ 481--96 (\textbf{Bulgaria}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/thuoOptimalLocation2008ijpam.pdf}{prueba}
+
+        %28 tengo pdf
+        \item AlemÃ¡n, E. y Navia, P. (2009)
+        ``Institutions and the Legislative Success of `Strong'
+        Presidents: An Analysis of Government Bills in Chile''
+        \emph{Journal of Legislative Studies}
+        vol.\ 14, nÃºm.\ 4, pp.\ 401--19 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/alemanNavia.pdf}{prueba}
+
+        %30 tengo pdf
+        \item Von Baer, E. (2009)
+        ``Sistema binomial: consensos y disensos'' en
+        \emph{Reforma del Sistema Electoral Chileno} coords.\ Fontaine, A. y Larroulet, C., Santiago: PNUD, pp.\ 177--206 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/vonBaer2009.pdf}{prueba}
+
+        %31 tengo pdf
+        \item Garrido Silva, C. (2009)
+        ``Subcampeones de la ConcertaciÃ³n: la misiÃ³n parlamentaria y el retorno a la labor gubernamental''
+        \emph{Revista de ciencia polÃ­tica}
+        vol.\ 29, nÃºm.\ 1, pp.\ 111--25 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/garrido2009rcp.pdf}{prueba}
+
+        %  38 tengo pdf
+        \item Morales, M. (2010)
+        ``Antecedentes comparativos polÃ­tico-institucionales para el debate sobre una nueva ConstituciÃ³n en Chile''
+        en \emph{En el nombre del pueblo: debate sobre el cambio constitucional en Chile} coordinado por Claudio Fuentes, Santiago: BÃ¶ll Cono Sur (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/morales2010.excerpt.pdf}{prueba}
+
+        %  39 tengo pdf
+        \item Morales Quiroga, M. y PiÃ±eiro RodrÃ­guez, R. (2010)
+        ``Gasto en campaÃ±a y Ã©xito electoral de los candidatos a diputados en chile 2005''
+        \emph{Revista de Ciencia PolÃ­tica} vol.\ 30 nÃºm.\ 3, pp.\ 645--67 (\textbf{Chile}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/moralesPineiro2010rcp.pdf}{prueba}
+
+        %  36 tengo pdf
+        \item Moreland, A.K. (2010)
+        ``Women for Women? Institutions, Political Ambition, and Substantive Representation in Latin America'' tesis doctoral, Texas Tech University, 279 pp.\ (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/MORELAND-DISSERTATION2010.excerpt.pdf}{prueba}
+
+        % tengo pdf
+        \item Morales Quiroga, M. (2012) 
+        ``The ConcertaciÃ³n's defeat in Chile's 2009--10 presidential elections''
+        \emph{Latin American Politics and Society} vol.\ 54, nÃºm.\ 2, pp.\ 79--107 (\textbf{EE.UU.}) $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/morales2012.pdf}{prueba}
+
+
+        %  40 tengo pdf
+        \item Curry, J.M., Herrnson, P.S. y Taylor, J.A. (2013)
+        ``The impact of district magnitude on campaign fundraising''
+        \emph{Legislative Studies Quarterly} vol.\ 38 nÃºm.\ 4, pp.\ 517--43 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/curryEtAl2013lsq.excerpts.pdf}{prueba}
+
+        %  41 tengo pdf
+        \item Morgenstern, S., Polga-Hecimovich, J. y Siavelis, P. (2013)
+        ``Ni chicha ni limon\'a: Party nationalization in pre- and post-authoritarian Chile''
+        \emph{Party Politics} vol.\ 20 nÃºm.\ 5, pp.\ 751--66 (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/morgenstern.polga.siavelisPtyNatChile2014pp.pdf}{prueba}
+
+        %  
+        \item Hizen, Y. (2015)
+        ``Does a Least-Preferred Candidate Win a Seat? A Comparison of Three Electoral Systems''
+        \emph{Economies} vol.\ 3, pp.\ 2--36 (\textbf{Suiza}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/mrs/hizenThreeSystems2015economies.pdf}{prueba}
+
+        \label{ncites:magar.etal.1998} % place this label after last item to record the number of cites for cross-referencing
+
+%        Faltan pruebas documentales
+%
+% Rodrigo Osorio 2016 It's the CD's fault Canadian Journal of POlitical Science.
+%
+%        E AlemÃ¡n 2009 Institutions and the Legislative Success of 'Strong'Presidents: An Analysis of Government Bills in Chile, The Journal of Legislative Studies
+%
+%        \item CA Cooper 2006 Institutions and Representational Roles in American State Legislatures, State Politics & Policy Quarterly
+%
+%       \item Peter Siavelis y Scott Morgenstern (2008) \emph{Pathways to power: political recruitment and candidate selection in Latin America} Penn State Press 440pp. (\textbf{EE.UU.})
+%
+%       \item Christopher A.\ Cooper y Lilliard E.\ Richardson Jr.\ (2008) ''Institutions and Representational Roles in American State Legislatures'' \emph{State Politics and Policy Quarterly} vol.\ 6 nÃºm.\ 2 pp.\ (\textbf{EE.UU.})
+%
+%       \item Royce Carroll y Matthew Soberg Shugart (2007) ''Neo-Madisonian Theory and Latin American Institutions'' en \emph{Regimes and Democracy in Latin America} coord.\ Gerardo Munck.
+%
+% When Parties Meet Voters Assessing Political Linkages Through Partisan Networks and Distributive Expectations in Argentina and Chile E Calvo, MV Murillo - Comparative Political Studies, 2012 - cps.sagepub.com
+%
+% Gender politics in Brazil and Chile. F Macaulay - 2006 - Springer
+%
+% [BOOK] Feminist policymaking in Chile L Haas - 2010 - books.google.com
+%
+% [BOOK] Democracy in the states: Experiments in election reform. BE Cain, T Donovan, CJ Tolbert - 2011 - books.google.com
+
+        \end{CitasMiTrabajo}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar Molinar 1995   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    \bibentry{magar.molinar.1995} (\href{http://sites.google.com/site/emagar/MagarMolinar1995.pdf}{\footnotesize{ISBN:}}). \textbf{\color{red}\ref{ncites:magar.molinar.1995}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  1 tengo pdf
+        \item Aguayo, S. y Acosta, M. (1997) \emph{Urnas y pantallas: la batalla por la informaciÃ³n}, 
+        MÃ©xico DF: OcÃ©ano (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarMolinar/aguayoUrnasPantallas.pdf}{prueba}
+
+        %  3 tengo pdf
+        \item Somuano, M.F. (2007) ``EvoluciÃ³n de valores y actitudes democrÃ¡ticos en mÃ©xico (1990--2005)''
+            \emph{Foro Internacional} vol.\ 47, nÃºm.\ 4, pp. 926--44 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarMolinar/somuano2007fi.pdf}{prueba}
+
+        %  2 tengo pdf
+        \item Langston, J. y Benton, A. (2009) ``A ras de suelo: Apariciones de candidatos y eventos en la campaÃ±a presidencial de MÃ©xico'' \emph{PolÃ­tica y Gobierno} vol.\ Especial, nÃºm.\ 2, pp. 135--76 (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/magarMolinar/langston+Benton2009pyg.pdf}{prueba}
+
+        \label{ncites:magar.molinar.1995} % place this label after last item to record the number of cites for cross-referencing
+
+        %  Buscar esto
+%        \item JosÃ© Luis Calva (coord) Democracia y gobernabilidad MÃ©xico DF: PorrÃºa  (\textbf{MÃ©xico}).
+%        \item KF Greene - 2007 [BOOK] Why dominant parties lose: Mexico's democratization in comparative perspective
+% falta pdf
+% @article{ortega2000,
+%   title  =  {Comparing types of transitions: Spain and Mexico},
+%   author  =  {Ortega Ortiz, Reynaldo Yunuen},
+%   journal  =  {Democratization},
+%   volume  =  {7},
+%   number  =  {3},
+%   pages  =  {65--92},
+%   year  =  {2000},
+%   publisher  =  {Taylor \& Francis}
+% }
+
+        \end{CitasMiTrabajo}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Magar tesis itam 1994   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fbox{\parbox{\textwidth}{
+    Eric Magar (1994) ``Elecciones municipales en el norte de MÃ©xico, 1970--1993:
+    Bases de apoyo partidistas y alineaciones electorales''
+    (tesis de licenciatura, Instituto TecnolÃ³gico AutÃ³nomo de MÃ©xico). \textbf{\color{red}\ref{ncites:magar.1994}~citas.}
+}}
+
+        \begin{CitasMiTrabajo}
+
+        %  2 tengo pdf
+        \item Cornelius, W.A. (1996)
+        \emph{Mexican Politics in Transition: The Breakdown of a One-Party-Dominant Regime}
+        La Jolla: Center for U.S.--Mexican Studies, UCSD (\textbf{EE.UU.}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/tesisItam/corneliusMPIT.pdf}{prueba}
+
+        %  tengo pdf
+        \item \bibentry{deremesYuxtap1999pyg} (\textbf{M\'exico}). $\rightarrow$ \href{http://ericmagar.com/cv/cites/tesisItam/deremesYuxtap1999pyg.pdf}{prueba}
+
+        %  1 tengo pdf
+        \item Lujambio, A. y Vives Segl, H. (2000)
+        \emph{El poder compartido}
+        MÃ©xico DF: OcÃ©ano (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/tesisItam/LujambioVivesPC.pdf}{prueba}
+
+        %  tengo pdf
+        \item Elizondo, C. y Nacif, B. (2002)
+        \emph{Lecturas sobre el cambio polÃ­tico en MÃ©xico}
+        MÃ©xico DF: FCE (\textbf{MÃ©xico}). $\rightarrow$~\href{http://ericmagar.com/cv/cites/tesisItam/elizNacif.pdf}{prueba}
+
+%% buscar copia
+% @BOOK{mayer2002lecturas,
+%   title={Lecturas sobre el cambio pol{\'\i}tico en M{\'e}xico},
+%   author={Mayer-Serra, C.E. and Nacif, B.},
+%   isbn={9789681663629},
+%   lccn={2002549288},
+%   series={Pol{\'\i}tica y derecho},
+%   url={https://books.google.com/books?id=xpH0ohjDkZMC},
+%   year={2002},
+%   publisher={Centro de Investigaci{\'o}n y Docencia Econ{\'o}micas}
+% }
+
+        \label{ncites:magar.1994} % place this label after last item to record the number of cites for cross-referencing
+
+        \end{CitasMiTrabajo}
+
+
+
+\end{document}
+
+

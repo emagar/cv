@@ -1,0 +1,1187 @@
+\documentclass[11 pt, letter]{article}
+
+\usepackage[letterpaper,right=1in,left=1in,top=1in,bottom=1in]{geometry}
+\usepackage{ae} % or {zefonts}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{setspace} %allows to change linespacing
+%\usepackage{dashrule} %allows ro draw dotted lines
+\usepackage{color}   % allows usage of color fonts
+\definecolor{light-gray}{gray}{0.65} % defines color and its name
+\definecolor{NavyBlue}{rgb}{0.,0,0.5}
+
+% avoid clubs and widows
+\clubpenalty=10000 \widowpenalty=10000
+% \displaywidowpenalty=10000
+
+\parindent=0mm  % removes indent at start of paragraphs
+
+%% Drops space between and above items and enumerates
+\let\olditemize=\itemize
+\let\endolditemize=\enditemize
+\renewenvironment{itemize}{%
+    \vspace*{-1.5\parsep}%
+    \begin{olditemize}%
+      \setlength{\parskip}{0.1\parskip}%
+      \setlength{\itemsep}{0.1\itemsep}%
+  }%
+  {%
+    \end{olditemize}%
+  }
+\let\oldenumerate=\enumerate
+\let\endoldenumerate=\endenumerate
+\renewenvironment{enumerate}{%
+    \vspace*{-1.5\parsep}%
+    \begin{oldenumerate}%
+      \setlength{\parskip}{0.1\parskip}%
+      \setlength{\itemsep}{0.1\itemsep}%
+  }%
+  {%
+    \end{oldenumerate}%
+  }
+
+\setstretch{1} %linespacing
+%\onehalfspacing
+%\doublespacing
+
+% SET LONG OR SHORT VERSION OF CV
+\usepackage{ifthen}
+\newboolean{longcv}
+\setboolean{longcv}{false}  % switch true, false, to produce long, short version of cv
+\newcommand{\condcomment}[2]{\ifthenelse{#1}{#2}{}}
+%  para usarlo se pone
+%  \condcomment{\boolean{longcv}}{
+%   ...
+%  }
+
+\usepackage[colorlinks=true,urlcolor=NavyBlue]{hyperref}
+
+\begin{document}
+
+\textbf{\LARGE{Eric Magar}} \\
+\emph{\Large{curriculum vitae}}   \\ [-2ex]
+\makebox[\textwidth][r]{\hrulefill
+\textcolor{light-gray}{\tiny{\texttt{~updated \today, newer versions at}}}} \\ [-1.5ex]
+\makebox[\textwidth][r]{
+\textcolor{light-gray}{\tiny{\texttt{http://allman.rhon.itam.mx/$\sim$emagar/cv}}}}
+
+
+\medskip
+
+\begin{tabbing}
+
+\textbf{Current position:} \= Professor, \href{http://politica.itam.mx/}{Department of Political Science}, \href{http://www.itam.mx/}{ITAM}, Mexico. \\
+\\
+\textbf{Contact info:} \= \+ ITAM-Ciencia Política, Río Hondo 1, Col.\ Tizapán San Ángel, 01000 México DF. \\ Tel. +52(55)5628-4079, Fax +52(55)5490-4672.  \href{mailto:emagar@itam.mx}{\small{\nolinkurl{emagar@itam.mx}}} \- \\
+\\
+\textbf{Personal info:} \= \+ Mexican and French citizen. Born 12
+January 1970 in Mexico City. \\ Married, one daughter.
+
+\end{tabbing}
+
+
+
+\bigskip
+
+\section{Education}
+
+\begin{itemize}
+
+\item BA in Political Science (1994, Instituto Tecnológico Autónomo de México).
+
+\item PhD in Political Science (2001, University of California at San
+    Diego). \\ \textbf{Dissertation:} ``\href{http://sites.google.com/site/emagar/MagarDiss.pdf}{Bully Pulpits: Posturing, Bargaining, and Polarization in the Legislative Process of the Americas}'' co-advised by Gary W.\ Cox and Paul W.\ Drake.
+    \condcomment{\boolean{longcv}}{Other committee members: Elizabeth Gerber, Matthew S.\ Shugart and Carlos Waisman.} 
+    Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{6}.
+    %(The last page of this CV contains a dissertation abstract.)
+
+\end{itemize}
+
+
+
+\section{Research interests}
+
+\begin{itemize}
+
+\item Comparative Political Institutions; legislative process; elections and electoral systems; \condcomment{\boolean{longcv}}{Latin- and Anglo-American politics; }formal theory; applied statistics.
+
+\end{itemize}
+
+
+
+\condcomment{\boolean{longcv}}{
+
+\section{Other studies}
+
+\begin{itemize}
+
+\item Summer 1992, ICPSR courses in linear regression analysis and game
+theory, University of Michigan, Ann Arbor.
+
+\end{itemize}
+}
+
+
+
+
+\section{Employment}
+
+\begin{itemize}
+
+\item 2000--present, Professor, \href{http://politica.itam.mx/}{Department of Political Science}, ITAM.
+
+\item 2007, Visiting Professor, \href{http://www.ibei.org}{Institut Barcelona d'Estudis Internacionals}, Barcelona, Spain.
+
+\condcomment{\boolean{longcv}}{\item 2007, Visiting Professor,
+Departamento de Ciencias Políticas y Sociales, Universidat Pompeu
+Fabra, Barcelona, Spain.}
+
+\item 2004--2007, Chair, \href{http://politica.itam.mx/}{Department of Political Science}, ITAM.
+
+\item 2000--2003, Director of Undergraduate Studies, ITAM.
+
+\condcomment{\boolean{longcv}}{\item 1998--2000, Research Assistant
+for Gary W.\ Cox and Mathew D.\ McCubbins,
+\href{http://polisci.ucsd.edu/}{Department of Political Science},
+UCSD.}
+
+\condcomment{\boolean{longcv}}{\item 1995--1998, Research Assistant,
+\href{http://usmex.ucsd.edu/}{Center for US-Mexican
+Studies}, UCSD.}
+
+\item 1994, Advisor to the Director Ejecutivo de Prerrogativas y Partidos Políticos, \href{http://www.ife.org.mx}{Instituto Federal Electoral}, Mexico City.
+
+\condcomment{\boolean{longcv}}{\item 1992--1993, Research Assistant,
+Departamento de Ciencias Sociales, ITAM.}
+
+\end{itemize}
+
+
+
+
+
+\section{Awards}
+
+\begin{itemize}
+
+\item 2011, SSRN Top Ten Paper Award (``Factions with clout'').
+
+\item 2010, SSRN Top Ten Paper Award (``Partisanship among the Experts'').
+
+\item 2010, SSRN Top Ten Paper Award (``Legalist vs.\ Interpretativist'').
+
+\item 2009, SSRN Top Ten Paper Award (``Factions with clout'').
+
+\item 2008, SSRN Top Ten Paper Award (``Gubernatorial coattails'').
+
+\item 2005--present, Level ``I'' Researcher, \href{http://www.conacyt.gob.mx/SNI/Index_SNI.html}{Sistema Nacional de Investigadores}, Mexico.
+
+\item 2002--2005, Researcher candidate, \href{http://www.conacyt.gob.mx/SNI/Index_SNI.html}{Sistema Nacional de Investigadores}, Mexico.
+
+\item 2001, The \href{http://polisci.ucsd.edu/about/recognition.html}{Peggy Quon Prize} for distinguished research contribution to political science, \\
+    Dept.\ of Political Science, UCSD.
+
+\item 1994, Premio Los Mejores Estudiantes de México,
+    \condcomment{\boolean{longcv}}{Ateneo Nacional de Ciencia y Tecnología,} \emph{El Diario de México}.
+
+\item 1994, Premio a la Excelencia Académica Miguel Palacios Macedo,
+    ITAM.
+
+\item 1994, \href{http://politica.itam.mx/exalumnos/documentos/ex-alumnos_cp.pdf}{Honors Mention} in the BA thesis defense,
+    ITAM.
+
+\condcomment{\boolean{longcv}}{\item 1988, Mention Assez-Bien in the
+Baccalauréat exams, \href{http://www.lfm.edu.mx/}{Lycée
+Franco-Mexicain}, Mexico City.}
+
+\end{itemize}
+
+
+
+
+\section{Recent grants and scholarships}
+
+\begin{itemize}
+
+\item 2008--present, Dean of Economics, Law, and Social Sciences Research Grant (annual), ITAM.
+    \condcomment{\boolean{longcv}}{US\$5,000 yearly.}
+
+\item 2005, Funding for a project on women representation in the Mexican Chamber of Deputies in the 1994--2003 period,
+     \href{http://www.inmujeres.gob.mx/}{INMUJERES} and \href{http://www.conacyt.mx/}{CONACYT}, Mexico.
+    \condcomment{\boolean{longcv}}{Mx\$232,000.}
+
+\item 2004--2006, Dean of Economics, Law, and Social Sciences Research Grant (annual), ITAM.
+    \condcomment{\boolean{longcv}}{US\$5,000 yearly.}
+
+\condcomment{\boolean{longcv}}{\item 1999, Dean's Social Science
+    Travel Research Fund Grant, \href{http://weber.ucsd.edu/}{Division of Social Sciences}, UCSD.
+    US\$1,500.
+
+\item 1999, \href{http://cilas.ucsd.edu/}{Center for Iberian and Latin American Studies} Field Research Grant, UCSD.
+    US\$1,500.
+
+\item 1998, \href{http://icenter.ucsd.edu/pao/friends.htm}{Friends of the International Center scholarship}, UCSD.
+    US\$1,000.
+
+\item 1995--1998, Beca-crédito CONACYT para estudios de posgrado
+    (partial stipend for living expenses),
+    \href{http://www.conacyt.mx/}{CONACYT}, Mexico.
+    US\$21,390.
+
+\item 1995--1997, Ford-McArthur scholarship for graduate studies
+    (partial stipend for living expenses),
+    \href{http://www.iie.org/}{Institute of International Education}, New York.
+    US\$12,400.}
+
+\end{itemize}
+
+\condcomment{\boolean{longcv}}{\medskip \makebox[10mm]{} \emph{Total $\approx$ US\$75,000}.}
+
+
+
+
+
+\section{Publications}
+
+\subsection{Articles in peer-reviewed journals}
+
+    \begin{itemize}
+
+    \item \href{http://papers.ssrn.com/abstract=1015093}{``Gubernatorial Coattails in Mexican Congressional Elections''} \href{http://www.journalofpolitics.org/}{\emph{The Journal of Politics}} vol.\ 74 no.\ 2, Apr.\ 2012, pp.\ 383--99. In April 2008 a preliminary version made it to SSRN's Top Ten Paper list. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+
+    \item \href{http://ssrn.com/abstract=1328668}{``Factions with clout: presidential cabinet coalition and policy in the Uruguayan Parliament''} with Juan Andrés Moraes, \href{http://ppq.sagepub.com/cgi/content/abstract/18/3/427}{\emph{Party Politics}} vol.\ 18 num.\ 3 (May 2012) pp.\ 427--51. In April 2009 and Sept.\ 2011 it made it to SSRN's Top Ten Paper list.
+
+    \item \href{http://www.fcs.edu.uy/icp/downloads/revista/RUCP17/RUCP-17-02_Magar&Moraes.pdf}{``Coalición y resultados: aprobación y duración del trámite parlamentario en Uruguay (1985--2000)''} with Juan Andrés Moraes, \href{http://www.fcs.edu.uy/icp/revista.htm}{\emph{Revista Uruguaya de Ciencia Política}} vol.\ 17, num.\ 1 (Jan.-Dec.\ 2008), pp.\ 39--70. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+    %ISSN:0797-9789
+    %http://www.fcs.edu.uy/icp/downloads/revista/RUCP16/RevistaICP17-02.pdf
+
+    \item \href{http://papers.ssrn.com/abstract=1089095}{``Partisanship in Non-Partisan Electoral Agencies and Democratic Compliance: Evidence from Mexico's Federal Electoral Institute''} with Federico Estévez and Guillermo Rosas, \href{http://dx.doi.org/10.1016/j.electstud.2007.11.013}{\emph{Electoral Studies}} vol.\ 27, num.\ 2 (June 2008), pp.\ 257--71. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{7}.
+    %ISSN:0261-3794
+
+    \item \href{http://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0718-090X2008000100013&lng=es&nrm=iso}{``México: reformas pese a un gobierno dividido''} with Vidal Romero, \href{http://www.scielo.cl/scielo.php?pid=0718-090X&script=sci_serial}{\emph{Revista de Ciencia Política}}
+    vol.\ 28, num.\ 1 (June 2008), pp.~265--85.
+    %ISSN:0716-1417
+
+    \item \href{http://allman.rhon.itam.mx/~emagar/cv/pdfs/Magar+RomeroMx2006rcp07.pdf}{``México en 2006: la accidentada consolidación democrática''} with Vidal Romero, \href{http://www.scielo.cl/scielo.php?pid=0718-090X&script=sci_serial}{\emph{Revista de Ciencia Política}} vol.\ 27, special num.\ (July 2007), pp.~184--204. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+    %ISSN:0716-1417
+
+    \item \href{http://sites.google.com/site/emagar/CoxMagarAPSR.pdf}{``How Much is Majority Status in the U.S. Congress Worth?''} with Gary W.\ Cox, \href{http://www.jstor.org/pss/2585397}{\emph{American Political Science Review}} vol.\ 93, num.\ 2 (June 1999), pp.\ 299--309. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{34}.
+
+    \item \href{http://sites.google.com/site/emagar/MRScps1998.pdf}{``On the Absence of Centripetal Incentives in Double-Member Districts: The Case of Chile''} with Marc R.\ Rosenblum and David Samuels, \href{http://cps.sagepub.com/cgi/content/abstract/31/6/714}{\emph{Comparative Political Studies}} vol.\ 31, num.\ 6 (December 1998), pp.\ 714--39. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{39}.
+
+    \end{itemize}
+
+\subsection{In non-refereed journals}
+
+    \begin{itemize}
+
+    \item \href{http://allman.rhon.itam.mx/~emagar/cv/pdfs/magarGCP2009.pdf}{``El inmovilismo democrático: un modelo de relaciones ejecutivo-legislativo en regímenes con poderes separados''},
+    \href{http://gacetadecienciapolitica.itam.mx/}{\emph{La Gaceta de Ciencia Política}} vol.\ 6, num.\ 1 (Fall/Win.\ 2009), pp.~11--25.
+
+    \item \href{http://sites.google.com/site/emagar/MagarRomeroImpasseFAeE2007.pdf}{``El impasse mexicano desde la perspectiva latinoamericana''} with Vidal Romero,     \href{http://fal.itam.mx/FAE/}{\emph{Foreign Affairs en español}} vol.\ 7, num.\ 1 (Jan.--Mar.\ 2007), pp.~117--31. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+    %ISSN:1665-1707
+
+    \end{itemize}
+
+\subsection{Chapters in edited volumes}
+
+    \begin{itemize}
+
+    \item \href{http://allman.rhon.itam.mx/~emagar/cv/pdfs/sanchez+magaloni+magarChapter2011.pdf}{``Legalist vs.\ Interpretativist: The Supreme Court and Democratic Transition in Mexico''} with Beatriz Magaloni and Arianna Sánchez in \emph{Courts in Latin America}, edited by Gretchen Helmke and Julio Ríos Figueroa (New York: Cambridge University Press, 2011). Translated to \href{http://allman.rhon.itam.mx/~emagar/cv/pdfs/sanchez+magaloni+magarCapitulo2011espanol.pdf}{Spanish} in \emph{Tribunales constitucionales de América Latina}, edited by Gretchen Helmke and Julio Ríos Figueroa (Mexico City: Suprema Corte de Justicia de la Nación, 2011). In January 2010 it made it to SSRN's Top Ten Papers list. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+
+    \item ``National Election Results for Argentina, Brazil, Chile, Colombia, El Salvador, Peru,
+    and Venezuela during the 1980s and 1990s'' with Kevin J.\ Middlebrook, statistical appendix in
+    \emph{Conservative Parties, the Right, and Democracy in Latin America}, edited by Kevin J.\ Middlebrook
+    (Baltimore: Johns Hopkins University Press, 2000).
+
+    \item \href{http://sites.google.com/site/emagar/MagarMolinar1995.pdf}{``Medios y democracia''} with Juan Molinar in \emph{Elecciones, diálogo y reforma: México 1994}, edited by Jorge Alcocer and Jorge Carpizo (Mexico City: Centro de Estudios para un Proyecto Nacional Alternativo, 1996). Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{3}.
+
+    \end{itemize}
+
+\subsection{Edited book}
+
+    \begin{itemize}
+
+    \item \href{http://sites.google.com/site/emagar/mujereslegisladoras.pdf}{\emph{Mujeres legisladoras en México: avances, obstáculos, consecuencias y propuestas}}, with Magdalena Huerta García (Mexico City: INMUJERES-CONACYT-Friedrich Ebert Stiftung-ITAM, 2006, ISBN 970-95099-0-X, 575 pp.) Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+
+
+    \end{itemize}
+
+\subsection{In magazine}
+
+    \begin{itemize}
+
+    \item \href{http://www.nexos.com.mx/?P=leerarticulo&Article=291}{``IFE: La casa de la partidocracia''} with Federico Estévez
+    and Guillermo Rosas, \emph{Nexos} 376 (April 2009), pp.\ 124--7.
+
+    \end{itemize}
+
+
+\subsection{In working paper series}
+
+    \begin{itemize}
+
+    \item \href{http://papers.ssrn.com/abstract=1159621}{``Of Coalition and Speed: Passage and Duration of Statutes in Uruguay's Parliament, 1985--2000''} with Juan Andrés Moraes, IBEI working papers num.\ 2008/15 ISSN:1886-2802 (June 2008).
+
+    \end{itemize}
+
+
+\subsection{Book reviews}
+
+    \begin{itemize}
+
+    \item ``\href{http://allman.rhon.itam.mx/~emagar/cv/pdfs/statonJudPowStratCommlaps2011PUBLISHEDVERSOIN.pdf}{Judicial Power and Strategic Communication in Mexico. By Jeffrey K. Staton},''
+    \href{http://www.blackwellpublishing.com/journal.asp?ref=1531-426x}{\emph{Latin American
+    Politics and Society}} vol.\ 53, num.\ 3 (Fall 2011), pp.\ 185--8.
+    %ISSN:1531-426X (online ISSN:1548-2456)
+    % o bien statonJudPowStratCommSUBMITTEDVERSION.pdf
+
+    \item ``\href{http://www.politicaygobierno.cide.edu/Vol_XVII_N2_2010/06_PyG-Resenas_380-408.pdf}{Informal Coalitions and Policymaking in Latin America:
+    Ecuador in Comparative Perspective. Por Andrés Mejía Acosta},''
+    \href{http://www.politicaygobierno.cide.edu/}{\emph{Política y Gobierno}} vol.\ 17, num.\ 2 ($2^{nd}$ semester 2010), pp.\ 384--6.
+    %ISSN:1665-2037
+
+    \item \href{http://muse.uq.edu.au/journals/the_americas/v062/62.3magar.pdf}{``Ambition, Federalism, and Legislative Politics in Brazil. By David
+    Samuels,''} \href{http://muse.uq.edu.au/journals/the_americas/toc/tam62.3.html}{\emph{The Americas}} vol.\ 62, num.\ 3 (January 2006), pp.~498--500.
+    %ISSN:0003-1615
+
+    \item \href{http://redalyc.uaemex.mx/src/inicio/ArtPdfRed.jsp?iCve=11500311}{``Nested Games: Rational Choice in Comparative Politics de George
+    Tsebelis,''} \emph{Perfiles Latinoamericanos de FLACSO} vol.\ 2, num.\ 3 (December 1993), pp.~194--8.
+
+    \end{itemize}
+
+%%\subsection{Work under review}
+%%
+%%    \begin{itemize}
+%%
+%%
+%%    \end{itemize}
+
+
+\subsection{Unpublished manuscripts and conference papers}
+
+    \begin{itemize}
+
+    \item ``Equilibrio de poderes: hoy, como antes, muy pocas reformas'' (May 2012).
+
+    \item ``Who calls the tune? The search for constituent effects in the Mexican Congress'' with Federico Estévez (April 2012).
+
+    \item \href{http://ssrn.com/abstract=1808960}{``When cartels split: roll call votes and majority factional warfare in the Mexico City Assembly''} (March 2011).
+
+    \item \href{http://ssrn.com/abstract=1683498}{``Partisanship among the experts: the dynamic party watchdog model of IFE, 1996--2010''} with Federico Estévez and Guillermo Rosas (September 2010). In October 2010 it made it to SSRN's Top Ten Paper list. Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{2}.
+
+    \item \href{http://ssrn.com/abstract=1642431}{``No self-control: Decentralized agenda power and the dimensional structure of the Mexican Supreme Court''} with Beatriz Magaloni and Arianna Sánchez (August 2010).
+
+    \item \href{http://ssrn.com/abstract=1991066}{``The constructive veto and parliamentary discipline''} (April 2010).
+
+    \item \href{http://ssrn.com/abstract=1963863}{``The political economy of fiscal reforms in Latin America: Mexico''} with Vidal Romero and Jeffrey Timmons, commissioned by the Research Department of the Inter-American Development Bank (March 2009).
+        %% Also availaboe at http://allman.rhon.itam.mx/~emagar/mywork/IADB-Fiscal_reform_Mexico_Chapterv30.pdf
+
+    \item \href{http://ssrn.com/abstract=1991076}{``Judges' law: ideology and coalitions in Mexico's Election Tribunal 1996--2006''} with Federico Estévez (November 2008).
+
+%    \item ``The constructive veto and floor cooperation under open rule: factional co-sponsoring in Uruguay, 1985--2005'' with Juan Andrés Moraes (April 2008).
+
+    \item \href{http://ssrn.com/abstract=1491112}{``The Incidence of Executive Vetoes in Comparative Perspective: The Case of American State Governments, 1979--1999''} (February 2007).
+
+    \item \href{http://ssrn.com/abstract=1486804}{``A Model of Executive Vetoes as Electoral Stunts with Testable Hypotheses''} (February 2007).
+
+    \item ``The Circuitous Path to Democracy: Legislative Control of the Bureaucracy in Presidencial Systems, the Case of Mexico'' with Alejandra Ríos Cázares (October 2004).
+
+    \item ``El efecto de arrastre de gobernadores en elecciones de diputados federales de México, 1979--2003'' (October 2004).
+
+    \item \emph{Bully pulpits: Veto politics in the legislative process of the Americas}, book manuscript (May 2003).
+
+    %\item ``The Pulse of Uruguayan Politics: Factions, Elections, and Veto Incidence, 1985--2002'' with Juan Andrés Moraes (April 2003).
+
+    \item \href{http://ssrn.com/abstract=1991099}{``The Paradox of the Veto in Mexico (1917--1997)''} with Jeffrey A.\ Weldon (September 2001). Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{6}.
+
+    \item \href{http://ssrn.com/abstract=1400409}{``Making Sound out of Fury: The Posturing Use of Vetoes in Chile and in Mexico''} (August 2001).
+
+    \item \href{http://ssrn.com/abstract=1400408}{``The Elusive Authority of Argentina's Congress: Decrees, Statutes, and Veto Incidence, 1983--1994''} (August 2001). Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{3}.
+
+    \condcomment{\boolean{longcv}}{\item ``Decrees and Statutes in Argentina, 1983--1994: Polarization and Usurpation of Authority or Bargaining and Concessions?'' (June 2000).}
+
+    \condcomment{\boolean{longcv}}{\item ``The Interplay of Separation of Power and the Legislative Process'' (May 2000).}
+
+    \item \href{http://ssrn.com/abstract=1991086}{``Veto Bargaining and Coalition Formation: A Theory of Presidential Policymaking with Application to Venezuela''} with Octavio Amorim Neto (March 2000). Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{1}.
+
+    \item \href{http://ssrn.com/abstract=1400402}{``The Value of Majority Status in the US House''} with Gary W.\ Cox (May 1999).
+
+    \condcomment{\boolean{longcv}}{\item ``Patterns of Executive-Legislative Conflict in Latin America and the US'' (May 1999).}
+
+    \item \href{http://ssrn.com/abstract=1400403}{``The Deadlock of Democracy Revisited: A model of Executive-Legislative Relations in Separation-of-Power Regimes''} (September 1998).
+
+    \item ``Elecciones municipales en el norte de México, 1970--1993: Bases de apoyo partidistas y alineaciones electorales'' BA thesis (July 1994). Citations: \href{http://allman.rhon.itam.mx/~emagar/cv/citasEMM.pdf}{2}.
+
+    \end{itemize}
+
+\subsection{\href{http://sites.google.com/site/emagar/op-eds}{Open editorials}}
+
+    \begin{itemize}
+
+    \item \href{http://redaccion.nexos.com.mx/?p=652}{``Quid pro quo''}
+    \emph{Nexos en línea}, Monday 25 January 2010.
+
+    \item \href{http://redaccion.nexos.com.mx/?p=322}{``Para que bailen al son de sus representados''}
+    \emph{Nexos en línea}, Wednesday 2 December 2009.
+
+    \item \href{http://laloncheria.com/2009/11/02/impuestos-presupuesto-partidos/}{``La ecuación que no cuadra: impuestos vs.\ gasto de partidos''} LaLoncheria.com, Monday 2 November 2009.
+
+    \item ``Fallos esperanzadores'' \emph{El Centro}, Thursday 4 September 2008, p.~14.
+
+    \item ``Crimen y castigo'' \emph{El Centro}, Thursday 21 August 2008, p.~17.
+
+    \item ``El sufragio sin reelección'' \emph{El Centro}, Thursday 7 August 2008, p.~15.
+
+    \item ``El presidente mulato'' \emph{El Centro}, Thursday 24 July 2008, p.~12.
+
+    \item ``Forever young'' \emph{El Centro}, Thursday 10 July 2008, p.~15.
+
+    \item ``La maldición del oro negro'' \emph{El Centro}, Thursday 26 June 2008, p.~17.
+
+    \item ``Marabunta'' \emph{El Centro}, Thursday 12 June 2008, p.~7.
+
+    \item ``Los piratas del Cofipe'' \emph{El Centro}, Thursday 29 May 2008, p.~13.
+
+    \item ``Juego en dos canchas'' \emph{El Centro}, Thursday 15 May 2008, p.~10.
+
+    \item ``La equidad de género: pendiente en el Congreso'' with Magdalena Huerta García, \emph{La Jornada} (Masiosare section, num.\ 420), Sunday 8 January 2006, p.~5.
+
+    \item ``Un superveto para el Ejecutivo'' with Jeffrey A.\ Weldon, \emph{Reforma}, Tuesday 17 April 2001, p.~6-Negocios.
+
+    \item ``Los vetos no son excepcionales'' with Jeffrey A.\ Weldon, \emph{Reforma}, Saturday 17 March 2001, p.~\textsc{5a}.
+
+    \end{itemize}
+
+
+
+\section{Presentations at professional conferences and seminars attended (since 2008)}
+
+\begin{itemize}
+
+\item 30 Aug.\ 2012, ``Who calls the tune? Constituent effects in the Mexican Congress'' at the annual meeting of the American Political Science Association, New Orleans, LA.
+
+\item 9 May 2012, Discussant of the paper ``Misfits, groundbreakers, or plain old politics'' by Verónica Hoyo presented at CIDE's Política y Gobierno research seminar, Mexico City.
+
+\item 27 Apr.\ 2012, ``Who calls the tune? The search for constituent effects in the Mexican Congress'' (with Federico Estévez) at the Workshop on Evidence-Based Approaches to Latin American Constitutionalism, UT--Austin, TX.
+
+\item 15 Apr.\ 2012, Discussant at panel 6--19 ``Comparative Legislative Politics and Executive Power'' at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 13 Apr.\ 2012, ``Are missing votes a problem for research on the Mexican Congress? No'' (with Francisco Cantú and Scott Desposato) poster at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 12 Apr.\ 2012, ``Who calls the tune? Gubernatorial and constituent effects in roll-call voting in the Mexican Congress'' (with Federico Estévez) at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 30 Mar.\ 2012 \href{http://allman.rhon.itam.mx/~ebarrios/marzo2012}{``Preferencias en regulación electoral: partidismo en el IFE''} at the R users workshop, ITAM, Mexico City.
+
+\item 14 Mar.\ 2012, ``Equilibrio de poderes (o y, sin embargo, no se mueve)'' at the Pluralismo y reformas constitucionales en México: 1997--2012 conference, CIDE--UNDP, Mexico City.
+
+\item 2 Apr.\ 2011, ``When cartels split: roll call votes and majority factional warfare in the Mexico City Assembly'' at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 1 Apr.\ 2011, Discussant at panel 6--5 ``Institutional Incentives and Policy Provision'' at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 2 Oct.\ 2010, Discussant at the ``Los motivos del votante'' panel of the $4^{th}$ Seminario Encuestas y Elecciones of the Instituto Federal Electoral, Cocoyoc, Morelos.
+
+\item 23 Sep.\ 2010, ``Partisanship among the experts: the dynamic party watchdog model of IFE, 1996--2010'' at the Electoral Administration in Mexico research workshop organized by the Center for U.S.--Mexican Studies, UCSD, La Jolla, CA.
+
+\item 3 Sep.\ 2010, ``No self-control: Decentralized Agenda Power and the Dimensional Structure of the Mexican Supreme Court'' at the annual meeting of the American Political Science Association, Washington, DC.
+
+\item 18 Aug.\ 2010, Discussant of ``A long history of the political manipulation of the supreme courts in Central America and the Caribbean, 1900--2009'' by Andrea Castagnola at the Centro de Estudios y Programas Interamericanos, ITAM, Mexico City.
+
+\item 26 May.\ 2010, ``A Pandora's box? Activism and ideological drift in the Mexican Supreme Court'' at CIDE's Política y Gobierno research seminar, Mexico City.
+
+\item 22 Apr.\ 2010, ``The constructive veto and parliamentary discipline''
+    at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+
+\item 15 Apr.\ 2010, Discussant in the panel ``Las propuestas para nuevo equilibrio de poderes'' with presentations by María Amparo Casar and Julio Ríos Figueroa at the Las agendas de reforma política 2010 en perspectiva comparada seminar, CIDE, Mexico City.
+
+\item 24 Mar.\ 2010, Discussant of the paper ``Dimensionality and party effects: An analysis of legislative preferences in Mexican States'' by Raúl C.\ González presented at CIDE's Política y Gobierno research seminar, Mexico City.
+
+\item 12 Mar.\ 2010, ``Reflexiones sobre tres propuestas de Reforma Política'' at the University Presidents' meeting of the Federación de Instituciones Mexicanas Particulares de Educación Superior, ITAM, Mexico City.
+
+\item 19 Jan.\ 2010, Participant in roundtable ``Agenda Ciudadana y Gobernabilidad: La Reforma Política. Diálogo
+    Ciudadano'' organized by the Interior Ministry, Centro Cultural Bella Época, Mexico City.
+
+\item 3 Dec.\ 2009, ``La Suprema Corte en la transición democrática de México''
+    paper presented at the Seminario de Investigación en Ciencia Política, ITAM, Mexico City.
+
+\item 5 Sep.\ 2009, ``Voting and sincerity. Ideal point drift and strategy in a regulatory
+    board'' at the annual meeting of the American Political Science Association, Toronto, Canada.
+
+\item 7 Mar.\ 2009, ``Activists vs.\ Legalists: The Mexican Supreme Court and its
+    Ideological Battles'' Conference on judicial politics in Latin America, CIDE, Mexico City.
+
+\item 3 Dec.\ 2008, ``¿Partidismo entre expertos? Un análisis de las votaciones en el
+    Consejo General del IFE'' ad CIDE's Política y Gobierno research seminar, Mexico City.
+
+\item 6 Nov.\ 2008, ``Judges' law: ideology and coalitions in Mexico's Election Tribunal 1996--2006''
+    paper read at the Bayesian Methods in the Social Sciences seminar, CIDE, Mexico City.
+
+%Esto debiera de ir en la sección `cursos' o `docencia'...
+\item 24--5 oct.\ 2008, short course on positive political theory, Masters in Government,
+    Instituto de Ciencia Política, Universidad de la República, Uruguay.
+
+\item 20 oct.\ 2008, ``Factions with clout: presidential cabinet coalition and policy
+    in the Uruguayan Parliament'' paper read at the $2^{nd}$
+    Conference of the Asociación Uruguaya de Ciencia Política, Intendencia Municipal de Montevideo,
+    Uruguay\condcomment{\boolean{longcv}}{ (panel D3 Political Institutions in Uruguay)}.
+
+\item 1 Oct.\ 2008, Discussant of the paper ``Sources of competitiveness
+    in authoritarian elections'' by Andreas Schedler
+    presented at CIDE's Política y Gobierno research seminar, Mexico City.
+
+\item 26 Sep.\ 2008, ``Factions with clout: presidential cabinet coalition and policy
+    in the Uruguayan Parliament'' paper read at the $2^{nd}$
+    Conference of the Asociación Mexicana de Estudios Parlamentarios, Puebla, Mexico.
+
+\item 6 Aug.\ 2008, ``Raising the odds of legislation: cabinet and bill-sponsor coalition in
+    Uruguay’s Parliament, 1985–-2005'' paper read at the $4^{th}$
+    Conference of the Asociación Latinoamericana de Ciencia Política, San José, Costa Rica.
+
+\item 18 Apr.\ 2008, ``The constructive veto and floor cooperation under open rule:
+    factional co-sponsoring in Uruguay'', paper presented at the Seminario de
+    Investigación en Ciencia Política, ITAM, Mexico City.
+
+%%\item 26 Oct.\ 2007, Discussant of the paper ``The legal toolbox
+%%    for the different areas of Regional Integration'' by Ramón Torrent
+%%    (Universidad Autónoma de Barcelona) presented at the Fifth Annual
+%%    Conference of the Euro-Latin Study Network on Integration and Trade
+%%    of the Inter-American Development Bank, Barcelona,
+%%    Spain.
+%%
+%%\item 6 Sep.\ 2007, ``Electoral stunts in parliamentary government with exogenous timetable: Evidence
+%%    from Spain's Autonomías'', paper presented at the $4^{th}$ General Conference
+%%    of the European Consortium of Political Research, Pisa, Italy\condcomment{\boolean{longcv}}{ (Political Economy section 18, panel 307)}.
+%%
+%%\item 3 May 2007, ``Éxito legislativo del presidente y duración del trámite parlamentario: el caso de Uruguay,
+%%    1985--2000,'' paper presented at the Instituto Interuniversitario de Iberoamérica, Universidad de Salamanca, Spain.
+%%
+%%\item 22 Feb.\ 2007, ``Partisanship in Non-Partisan Electoral Agencies and Democratic Compliance:
+%%    Evidence from Mexico's Federal Electoral Institute,'' paper presented at IBEI, Barcelona, Spain.
+%%
+%%\item 19 Feb.\ 2007, ``Veto Politics in the Americas: A Study of the Legislative Process,'' paper presented at the
+%%    Political Economy Workshop of the Government Department, University of Essex, United Kingdom.
+%%
+%%\condcomment{\boolean{longcv}}{\item 8 Nov.\ 2006,  Presentation of
+%%    the book \emph{Mujeres legisladoras en México: avances, obstáculos,
+%%    consecuencias y propuestas} to the Equality and Gender Committee of the Chamber of
+%%    Deputies, Mexico City.}
+%%
+%%\item 24 Oct.\ 2006, ``Principales Sistemas de Gobierno en Europa y América'' conference for students
+%%    of the Masters in Military Administration for National Security and Defense, Colegio de Defensa Nacional, Mexico City.
+%%
+%%\item 18 Oct.\ 2006,  ``Perspectivas Ejecutivo--Legislativo'' roundtable at the $1^{st}$ Congress of the
+%%    Asociación Mexicana de Estudios Parlamentarios, UNAM, Mexico City.
+%%
+%%\condcomment{\boolean{longcv}}{\item 17 Oct.\ 2006,  ``Presentación
+%%de Resultados sobre Participación Política y Toma de
+%%    Decisiones de las Mujeres en México'' workshop on research projects funded by the 2004 call for
+%%    paper of the Fondo Sectorial de Investigación y Desarrollo INMUJERES-CONACYT (with Magdalena Huerta).}
+%%
+%%\item 12 Sep.\ 2006, ``El veto y las relaciones presidente-congreso 2006--2009,'' at the Coaliciones
+%%    multipartidistas: condición para un nuevo gobierno conference, organized by
+%%    Fundación Rafael Preciado Hernández, Club France, Mexico City.
+%%
+%%\item 7 Jun.\ 2006,   ``Equidad y medios en el proceso electoral 2006'' at the Seminar on Institutions
+%%    and Processes of Mexico's Democracy, Facultad de
+%%    Ciencias Políticas y Sociales, UNAM, Mexico City.
+%%
+%%\item 22 Apr.\ 2006,  Discussant in panel 3--11 ``The formation of national party systems'', at the annual
+%%    meeting of the Midwest Political Science Association, Chicago, IL.
+%%
+%%\item 21 Apr.\ 2006, ``Can parties reduce agency slack through the judges?'',
+%%    paper read at the annual meeting of the Midwest Political Science
+%%    Association, Chicago, IL.
+%%
+%%\condcomment{\boolean{longcv}}{\item 15 Nov.\ 2005, ``Relaciones
+%%    presidente-congreso: panorama 2006--2009,'' talk given at Banamex's
+%%    Department of Sociopolitical Studies, Mexico City.}
+%%
+%%\item 2 Sep.\ 2005, ``Are Non-Partisan Technocrats the Best Party Watchdogs Money Can Buy?  An
+%%    Examination of Mexico's Instituto Federal Electoral'' poster presented at the annual meeting of the American
+%%    Political Science Association, Washington, DC.
+%%
+%%\item 9 Apr.\ 2005, ``Party Sponsorship and Voting Behavior in Small Committees: Mexico's Instituto
+%%    Federal Electoral'' paper read at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+%%
+%%\item 4--5 Mar.\ 2005, ``Gubernatorial Coattails and Mexican Congressional Elections since 1979,''
+%%    paperread at the Conference What Kind of Democracy Has Mexico? The
+%%    Evolution of Presidentialism and Federalism at the Center for US-Mexican Studies,
+%%    UCSD.
+%%
+%%\item 7 Oct.\ 2004, ``The Circuitous Path to Democracy: Legislative Control of the Bureaucracy in
+%%    Presidencial Systems, the Case of Mexico'' at the conference on Democratic Accountability and Rule of Law in Mexico, Stanford
+%%    University.
+%%
+%%\condcomment{\boolean{longcv}}{\item 1 Oct.\ 2004, ``El efecto de arrastre de gobernadores en elecciones de diputados federales de
+%%    México, 1979--2003'' paper read at the Fridays Political Science Research
+%%    Workshop, ITAM, Mexico City.}
+%%
+%%\item 30 Sep.\ 2004, ``El efecto de arrastre de gobernadores en elecciones de diputados federales de
+%%    México, 1979--2003'' paper read at the $2^{nd}$ Congress of the Asociación
+%%    Latinoamericana de Ciencia Política, Mexico City.
+%%
+%%\condcomment{\boolean{longcv}}{\item 15 Jul.\ 2004,  Chair at the
+%%session on ``Institutions in Presidential Democracy: Comparative
+%%    Perspective from the Americas'' at the conference on Democratic Institutions in Latin
+%%    America: Implications for Mexico's Evolving Democracy, Center for US-Mexican
+%%    Studies, UCSD.}
+%%
+%%\item 19 Apr.\ 2004,  Discussant in panel 3--17 ``The new Mexican Political Economy'' at the annual
+%%    meeting of the Midwest Political Science Association, Chicago, IL.
+%%
+%%\item 6--9 May 2003, Presented the manuscript of my book \emph{Bully Pulpits} at the Political Institutions and
+%%    Public Choice seminar, Dept. of Political Science, Michigan State University.
+%%
+%%\item 7 Apr.\ 2003, ``The Pulse of Uruguayan Politics: Factions, Elections, and Veto Incidence, 1985--2002,'' paper presented at the annual meeting of the Midwest Political Science
+%%    Association, Chicago, IL.
+%%
+%%\condcomment{\boolean{longcv}}{\item 7 Apr.\ 2003, ``Theoretical and
+%%Empirical Models of Post-Election Coalition Bargaining in
+%%    presidential democracies: Ecuador and Uruguay in comparative perspective,''
+%%    poster presented with Andrés Mejía Acosta at the annual meeting of the Midwest
+%%    Political Science Association, Chicago, IL.}
+%%
+%%\condcomment{\boolean{longcv}}{\item 12 Feb.\ 2003,  Participant in
+%%the roundtable ``The Mexican Left: Resurgence or Default Option,''
+%%    Center for US-Mexican Studies, UCSD.
+%%
+%%\item 6 Sep.\ 2002,  Discussant of the paper ``Majoritarian Electoral Systems and Consumer Power:
+%%    Price-Level Evidence from the OECD Countries'' by Mark Andreas Kayser
+%%    and Ronald Rogowski, at the Research Workshop in Political Science, ITAM, Mexico City.
+%%
+%%\item Jun.--Jul.\ 2002, Participant in the Empirical Implications of Theoretical Models Summer Institute
+%%    at the Center for Basic Research in the Social Sciences, Harvard University.
+%%
+%%\item 12 Apr.\ 2002,   Discussant of the paper ``Presidential Vetoes in the Early Republic'' by Nolan
+%%    McCarty at the Research Workshop in Political Science, ITAM, Mexico City.}
+%%
+%%\item 30 Nov.\ 2001,   Discussant of the manuscript \emph{Lawmaking and Bureaucratic Discretion in
+%%    Modern Democracies} by John D.\ Huber and Charles D.\ Shipan, at the CIDE's Política y Gobierno research seminar, Mexico City.
+%%
+%%\item 6 Sep.\ 2001,  ``The Paradox of the Veto in Mexico (1917--1997)'' paper presented at
+%%    the annual meeting of the Latin American Studies Association, Washington, DC.
+%%
+%%\item 31 Aug.\ 2001,  ``Making Sound out of Fury: The Posturing Use of Vetoes in Chile and in
+%%    Mexico,'' paper read at the annual meeting of the American Political
+%%    Science Association, San Francisco, CA.
+%%
+%%\item 30 Aug.\ 2001,  ``The Elusive Authority of Argentina's Congress: Decrees, Statutes, and Veto
+%%    Incidence, 1983--1994,'' paper read at the annual meeting of the American
+%%    Political Science Association, San Francisco, CA.
+%%
+%%\item 20 Apr.\ 2001, ``The Incidence of Executive Vetoes in Comparative Perspective: Position-Taking
+%%    and Uncertainty in US State Governments, 1983--1993,'' paper read at the annual meeting of the Midwest Political Science Association, Chicago, IL.
+%%
+%%\condcomment{\boolean{longcv}}{\item 16 Mar.\ 2001, ``El position-taking y la incertidumbre como fuentes de vetos del ejecutivo en los gobiernos estatales de los EEUU'' paper read at the Research Workshop in Political Science, ITAM, Mexico City.
+%%
+%%\item 13 Oct.\ 2000,  Discussant of the paper ``Democratization and the Economy in Mexico:
+%%    Equilibrium (PRI) Hegemony and its Demise,'' by Alberto Díaz Cayeros, Beatriz Magaloni and Barry R.\ Weingast, at the Research Workshop in Political Science, ITAM, Mexico City.
+%%
+%%\item 17 Mar.\ 2000, ``Veto Bargaining and Coalition Formation: A Theory of Presidential Policymaking
+%%    with Application to Venezuela,'' paper read at the annual meeting of the
+%%    Latin American Studies Association, Miami, FL.}
+%%
+%%\item 15 Oct.\ 1999, ``La incidencia de vetos en perspectiva comparativa: el caso de los gobiernos
+%%    estatales de los EEUU,'' paper presented at the Centro de Estudios para
+%%    el Desarrollo Institucional, Universidad de San Andrés, Argentina.
+%%
+%%\condcomment{\boolean{longcv}}{\item 23 Ago.\ 1999, ``Veto Incidence in Comparative Perspective: The Case of US State
+%%    Governments,'' paper presented at the Department of Political Science,
+%%    UCSD.}
+%%
+%%\item 7--14 Jul.\ 1999,    Discussion of the final manuscript of \emph{Political Economics}, by Torsten Persson
+%%    y Guido Tabellini, at the ``Encounters with Authors'' seminar of the Center for
+%%    Basic Research in Social Science, Harvard University.
+%%
+%%\item 9 May 1999, \href{http://sites.google.com/site/emagar/MagarUCLA-2.PDF}{``Patterns of
+%%    Executive-Legislative Conflict in Latin America \& the US''}
+%%    paper read at the $1^{st}$ International Graduate Student Retreat for
+%%    Comparative Research, organized by the Society for Comparative Research and the
+%%    Center for Comparative Social Analysis, UCLA.
+%%
+%%\item 4 Sep.\ 1998, ``The Deadlock of Democracy Revisited: A model of Executive-Legislative
+%%    Relations in Separation-of-Power Regimes,'' paper read at the
+%%    annual meeting of the American Political Science Association, Boston, MA.
+
+\end{itemize}
+
+
+
+
+\section{Referee/reviewer}
+
+\subsection{Journal articles}
+
+\begin{itemize}
+
+\item \emph{American Journal of Political Science} (2000, 2004, 2004, 2006)
+
+\item \emph{American Political Science Review} (2003, 2004, 2004, 2007)
+
+\item \emph{Comparative Political Studies} (1998, 2009)
+
+\item \emph{Economía Mexicana} Nueva Época (2008, 2011)
+
+\item \emph{EconoQuantum} (2012, 2012)
+
+\item \emph{Journal of Legislative Studies} (2010)
+
+\item \emph{Journal of Politics} (2011)
+
+\item \emph{Revista Sociológica} de la UAM (2003)
+
+\item \emph{Party Politics} (2008)
+
+\item \emph{Perfiles Latinoamericanos} de FLACSO--México (2009)
+
+\item \emph{Política y Gobierno} (2001, 2002, 2010, 2011)
+
+\item \emph{Revista Mexicana de Sociología} (2001, 2005)
+
+\item \emph{World Politics} (2004)
+
+\end{itemize}
+
+\subsection{Books}
+
+\begin{itemize}
+
+\item Facultad Latinoamericana de Ciencias Sociales - Sede México (2003, 2004)
+
+\item Oxford University Press (2008)
+
+\end{itemize}
+
+\subsection{Book chapters}
+
+\begin{itemize}
+
+\item Asociación Latinoamericana de Ciencia Política (\href{ftp://emagar@allman.rhon.itam.mx/home/personal_www/e/emagar/cv/moreEvid/dictamenALACIP2012n1.pdf}{2012}, 2012)
+
+\end{itemize}
+
+
+\subsection{Research projects}
+
+\begin{itemize}
+
+\item Consejo Nacional de Ciencia y Tecnología (2009, 2009)
+
+\end{itemize}
+
+
+
+
+
+\section{Academic and Research Committees}
+
+\begin{itemize}
+
+\item 2012--,  \href{ftp://emagar@allman.rhon.itam.mx/home/personal_www/e/emagar/cv/moreEvid/comiteFlacso2012.pdf}{Member} of the Academic Coordination Committee for the
+    Masters in Government and Public Affairs,
+    Facultad Latinoamericana de Ciencias Sociales Mexico.
+
+\item 2010--12, Editorial Board member, Facultad Latinoamericana
+    de Ciencias Sociales Mexico.
+
+\item 2009--,   Research Associate, Center for U.S.-Mexican Studies
+    (UC, San Diego.)
+
+\item 2006--,   Member of the editorial board,
+    \emph{La Gaceta de Ciencia Política} (ITAM, Mexico City.)
+
+\item 2001--2004,  Member of the Academic Coordination Committee for the
+    Masters in Government and Public Affairs,
+    Facultad Latinoamericana de Ciencias Sociales Mexico.
+
+\end{itemize}
+
+
+
+
+
+\condcomment{\boolean{longcv}}{
+
+\section{Other committees}
+
+\begin{itemize}
+
+\item 2012,   Comité Técnico de Especialistas de la Comisión Temporal de Debates, member of the advisory board to the committee in charge of televised presidential candidate debates, Instituto Federal Electoral, Mexico City.
+
+\item 2006,   \emph{Reforma} newspaper, member of the Research Board, Mexico City.
+
+\item 2005--2006,  Tu Rock es Votar, member of the Advisory Board, Mexico City.
+
+\end{itemize}
+}
+
+
+
+\condcomment{\boolean{longcv}}{
+
+\section{Professional association membership}
+
+\begin{itemize}
+
+\item American Political Science Association (since 1998)
+
+\item Asociación Latinoamericana de Ciencia Política (since 2002)
+
+\item Asociación Mexicana de Estudios Parlamentarios (since 2011)
+
+\item Midwest Political Science Association (since at least 2001)
+
+\item Public Choice Society (since 2006)
+
+\end{itemize}
+}
+
+
+
+%\condcomment{\boolean{longcv}}{
+
+\section{Academic events organized}
+
+\begin{itemize}
+
+\item 13--17 Jun.\ 2011, ``Latent variable estimation workshop'' co-taught with Professor Guillermo Rosas from Washington University St.\ Louis, Mexico City, ITAM.
+
+\item 6--7 Nov.\ 2008, ``Bayesian methods in the social sciences'' seminar, co-organized
+    by the Political Science Departments of Washington University in St.\ Louis, CIDE
+    and ITAM, Mexico City, at CIDE and ITAM.
+
+\item 8 Jun.\ 2006,  ``2006: las encuestas en la mira,'' seminar, co-sponsored by WAPOR-
+    Mexico, the Center for US-Mexican Studies and ITAM's Political Science Department,
+    Casa de California, Chimalistac, Mexico City.
+
+\item 2001--2003,  Seminario de Investigación Política de los Viernes,
+    Political Science Department, ITAM.
+
+\item Oct.\ 2004,  Dr. Hans-Jürgen Beerfeltz's keynote address on the German electoral system,
+    co-organized with the Friedrich Naumann Foundation and the Instituto Federal
+    Electoral, ITAM.
+
+\end{itemize}
+%}
+
+
+
+
+\section{Students}
+
+\subsection{PhD thesis}
+
+    \begin{itemize}
+
+    \item Dec.\ 2009, Mario Alejandro Torrico Terán,
+    ``Factores explicativos y dimensiones de la estabilidad política: un estudio mundial,''
+    Doctorado en Ciencias Sociales, FLACSO--México.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Excellent Grade with Recommendation to Publish at the oral defense.
+
+        \end{list}
+
+    \end{itemize}
+
+
+\subsection{Masters theses}
+
+    \begin{itemize}
+
+    \item Sep.\ 2007, Tomás Pinheiro Fiori, ``The Political Economy of Hydrocarbons in Latin America,''
+    Master in International Relations, IBEI, Barcelona.
+
+    \item Sep.\ 2007, Silvia Gándara Berger, ``Aproximación a la situación actual de las relaciones civiles-militares en Guatemala desde una perspectiva democrática,'' Master in International Relations, IBEI, Barcelona.
+
+    \item Nov.\ 2004,  Octael Nieto Vázquez, ``La estructura, el gasto y el desempeño de las organizaciones
+    culturales federales en México, 1990--2003,'' Maestría en Sociología Política,
+    Instituto Mora, Mexico.
+
+    \item Jul.\ 2004,  René Ramírez Gallegos, ``Pseudo-salida, silencio y ¿deslealtad?: entre la inacción
+    colectiva, la desigualdad de bienestar y la pobreza de capacidades,'' Maestría en
+    Gobierno y Asuntos Públicos, FLACSO-Mexico.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Excellent Grade at the oral defense.
+
+        \end{list}
+
+    \end{itemize}
+
+\subsection{BA theses}
+
+\begin{itemize}
+
+    \item Jun.\ 2011, Luis Everdy Mejía López ``Procesos de intermediación política en la elección presidencial mexicana del 2006'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Oct.\ 2010 Jaime Arredondo ``El subsidio municipal para la seguridad pública: análisis de la fórmula de elegibilidad'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Aug.\ 2010, César Montiel Olea ``Repensando los poderes presidenciales: un estudio del veto total y parcial en México, 1997--2009'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Oct.\ 2009, Roberto Ponce López ``La geografía del voto en México: organización partidista en las
+    secciones electorales, 1997--2003'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Mar.\ 2009, Isabel Zapata Morales ``Las cuotas de género en los congresos locales
+    mexicanos: una aproximación empírica a un debate normativo'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Jan.\ 2009, Luis Esteban Islas Bacilio ``El Sindicato Nacional de Trabajadores
+    de la Educación (SNTE) y la calidad de la educación en México'' ITAM.
+
+    \item Nov.\ 2008, Gabriel Alfredo Peto ``Participación electoral, concurrencia y movilización en
+    las elecciones municipales en México, 1991--2006'' ITAM.
+
+    \item Jun.\ 2008,  Ana Quesada Reynoso, ``Noche de gatos pardos: autoridad, señales y
+    aprobación en el ITAM'' ITAM.
+
+    \item Dec.\ 2007, Alejandro Trelles Yarza and Diego Martínez Cantú
+    ``Fronteras electorales: aportaciones del modelo de redistritación mexicano al estado de
+    California'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense;
+
+        \item received $1^{st}$ place of Ex-ITAM's Research Prize
+        2007.
+
+        \end{list}
+
+    \item Jun.\ 2006,  Magdalena Huerta García, ``¿Qué hace falta para que haya más mujeres
+    en la Cámara de Diputados? Determinantes del acceso de mujeres a candidaturas y a
+    puestos de elección en la Cámara de Diputados, 1994--2006'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item  Received Special Mention at the oral defense.
+
+        \end{list}
+
+    \item Jun.\ 2006,  Gabriela Enrigue González, ``La Suprema Corte y la desigualdad en el acceso a
+    la justicia: ¿a quién sirve el amparo en materia fiscal?'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense;
+
+        \item received $2^{nd}$ prize of the Premio Banamex de Economía 2006;
+
+        \item received $1^{st}$ place of Ex-ITAM's Research Prize 2006;
+
+        \item received Honors Mention of the Premio Nacional Tlacaélel de Consultoría Económica
+        2008.
+
+        \end{list}
+
+    \item Jun.\ 2006,  Yunuel Cruz Guerrero, ``Del simbolismo a la equidad, el impacto del género
+    en los partidos políticos y la ALDF: representación en comisiones y prioridades
+    legislativas'' ITAM.
+
+    \item Jun.\ 2006,  Leticia Lowenberg Cruz, ``El sesgo de género en la nominación de candidatos y la
+    elección de diputados locales para la Asamblea Legislativa del Distrito Federal,
+    1994--2003'' ITAM.
+
+    \item Oct.\ 2004,  Gildardo Zafra Amescua, ``Efectos de arrastre en elecciones concurrentes en
+    México'' ITAM.
+
+    \item Sep.\ 2004,  Manlio Gutiérrez Vázquez, ``La coordinación de las acciones legislativas del
+    poder ejecutivo en México: una propuesta de reorganización'' ITAM.
+
+    \item May.\ 2003,  Jimena Otero Zorrilla, ``¿Gerrymandering en México? La geografía política federal,
+    1994--1997'' ITAM.
+
+        \begin{list}{--}{\topsep=-10pt \parsep=0pt \parskip=0pt} %% itemize sin espacios de más para premios
+
+        \item Received Special Mention at the oral defense;
+
+        \item received Special Mention of Ex-ITAM's Research Prize
+        2003.
+
+        \end{list}
+
+    \item May.\ 2003,  Cristina Rivas Ochoa and Diana Toledo Figueroa, ``Comisiones: la brecha
+    institucional'' ITAM.
+
+    \end{itemize}
+
+
+\section{Consulting}
+\begin{itemize}
+
+\item 2008--09, ``The Political Economy of Fiscal Reforms in Latin America: The
+    Case of Mexico'' with Vidal Romero and Jeffrey F.\ Timmons,
+    background paper for the Inter-American Development Bank \emph{The
+    Political Economy of Fiscal Reforms in Latin America} by Mark
+    Hallerberg.
+
+\item 2006, ``Changing Patterns of Governance in
+    Mexican States: What do They Tell Us About Future Directions of National
+    Politics?'' with Vidal Romero, background paper for the Institutional Governability Report
+    \emph{Democratic Governance in Mexico: Beyond State Capture and Social Polarization} by
+    Philip Keefer (Mexico City: World Bank-INAP-CIDE, 2007).
+
+\end{itemize}
+
+
+\condcomment{\boolean{longcv}}{
+\section{Radio and TV commentary}
+\begin{itemize}
+
+\item 20 May 2010, Reforma política: Iniciativas de ley, ``Voces de la Democracia'' program of the Instituto Federal Electoral, Canal del Congreso, Mexico City.
+
+\item 19 May 2010, Reforma política: Iniciativas de ley, ``Voces de la Democracia'' program of the Instituto Federal Electoral, Radio UNAM, Mexico City (\textsc{fm96.1mh}z y \textsc{am860kh}z).
+
+\item 18 Nov.\ 2008, Roundtable on the 2009 budget, ``Punto y coma'', Canal 40, Mexico City.
+
+\item 25 Aug.\ 1995, ``Madrazo contra Zedillo'' Radio UNAM, Mexico City (\textsc{fm96.1mh}z y \textsc{am860kh}z).
+
+\item 14 Jul.\ 1995, ``Impuesto a la gasolina'' Radio UNAM, Mexico City (\textsc{fm96.1mh}z y \textsc{am860kh}z).
+
+\item 7 Jul.\ 1995, ``Masacre en Aguas Blancas, Gro.'' Radio UNAM, Mexico City (\textsc{fm96.1mh}z y \textsc{am860kh}z).
+
+\item 30 Jun.\ 1995, ``Relevan a Esteban Moctezuma'' Radio UNAM, Mexico City (\textsc{fm96.1mh}z y \textsc{am860kh}z).
+
+\end{itemize}
+}
+
+\condcomment{\boolean{longcv}}{
+
+\section{Languages}
+
+Spanish, French, English. }
+
+
+\section{References}
+\begin{itemize}
+
+\item \textsc{Gary Cox},
+Professor of Political Science, Stanford \\
++1(650)723-4278, \url{gwcox@stanford.edu}.
+
+\item \textsc{Paul Drake},
+Professor of Political Science, UCSD \\
++1(858)534-6868, \url{pdrake@weber.ucsd.edu}.
+
+\item \textsc{Mathew McCubbins},
+Provost Professor of Business, Law and Political Economy, University of Southern California \\
++1(213)740-7538, \url{mmccubbins@marshall.usc.edu}.
+
+\item \textsc{Wayne Cornelius},
+CCIS Director Emeritus and Theodore Gildred Distinguished Professor Emeritus of Political Science, UCSD \\
++1(885)822-4447, \url{wcorneli@weber.ucsd.edu}.
+
+\item \textsc{Federico Estévez},
+Professor de Ciencia Política, ITAM \\
++52(55)5628-4000x3702, \url{festevez@itam.mx}.
+
+\item \textsc{Beatriz Magaloni},
+Professor of Political Science, Stanford \\
++1(650)724-5949, \url{magaloni@stanford.edu}.
+
+\item \textsc{Elisabeth Gerber},
+Professor of Public Policy, Univ.\ of Michigan \\
++1(734)647-4004, \url{egerber@umich.edu}.
+
+\end{itemize}
+
+\end{document}
+
+
+\newpage
+
+\begin{center}
+\textbf{\large{Abstract of my dissertation}} \\
+``Bully pulpits: Posturing, bargaining, and polarization in the legislative process of the Americas''
+
+by
+
+Eric Magar \\
+Doctor of Philosophy in Political Science \\
+University of California, San Diego, 2001 \\
+Professors Gary W. Cox and Paul W. Drake, Chairs
+\end{center}
+
+I study the legislative process under the presidential form of
+separation of power (\textsc{sop}).  Three themes converge in my
+study. First I ask why vetoes occur in SOP systems?  In the
+US the conventional answer is that vetoes are tactical
+maneuvers of normal democratic politics.  Vetoes are not harbingers
+of imminent democratic breakdown, nor evidence of gridlock.  Vetoes
+are part of everyday policy bargaining.
+
+\medskip Second, I ask whether the U.S. is an exception among presidential
+systems.  Does this logic apply to other cases such as those in
+Latin America?  Is it applicable to sub-national levels of
+government?  If vetoes are bargaining tactics then their use should
+vary with the institutional context.
+
+\medskip Third, I inquire about different explanations of veto incidence. Are
+vetoes the product of incomplete information in bargaining hence
+mistakes by somewhat shortsighted politicians?  Are vetoes
+bargaining ploys meant to build a reputation of toughness in light
+of asymmetric information?  Or are vetoes better understood as
+publicity stunts, maneuvers aimed towards the public in search of
+support?  Incomplete information and position-taking compete to
+explain veto incidence.
+
+\medskip This dissertation reviews strands of literature that share the topic
+(\textsc{sop}) but not the audience (Anglo- and Latin-Americanists),
+offering a bridge over the gap.  I extend a formal model of
+executive-legislative bargaining (the agenda-setter model) to
+include a posturing motive for politicians to provoke vetoes.  The
+extended model is put to a test covering state-level governments of
+the US.  I then expand my research to Latin America,
+studying veto incidence in Argentina and three case studies of
+inter-branch bargaining in Argentina, Chile, and Mexico.
+
+\medskip Studies of presidentialism in the last decade have shifted attention
+from the dysfunctionality of gridlock (e.g. Linz, Sundquist) to a
+wide range of tactical maneuvers that SOP offers politicians (e.g.
+Kernell, Cameron).  I follow the recent literature in analyzing a
+richer, livelier breed of executive-legislative relations.  Bully
+pulpit veto politics involve the presidency as well as Congress.
+
+
+
+\condcomment{\boolean{longcv}}{
+\bigskip
+\textbf{\large{}}
+\begin{itemize}
+\item
+\end{itemize}
+}
