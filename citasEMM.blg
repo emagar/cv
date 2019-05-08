@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: citasEMM.aux
 The style file: apalike.bst
 Database file #1: /home/eric/Dropbox/mydocs/magar.bib
-You've used 73 entries,
+You've used 79 entries,
             1935 wiz_defined-function locations,
-            940 strings with 17970 characters,
-and the built_in function-call counts, 26667 in all, are:
-= -- 2719
-> -- 828
-< -- 74
-+ -- 258
-- -- 251
-* -- 2162
-:= -- 4663
-add.period$ -- 228
-call.type$ -- 73
-change.case$ -- 469
-chr.to.int$ -- 72
-cite$ -- 73
-duplicate$ -- 1081
-empty$ -- 1986
-format.name$ -- 378
-if$ -- 5251
+            976 strings with 19183 characters,
+and the built_in function-call counts, 28746 in all, are:
+= -- 2928
+> -- 904
+< -- 79
++ -- 286
+- -- 275
+* -- 2334
+:= -- 5036
+add.period$ -- 246
+call.type$ -- 79
+change.case$ -- 511
+chr.to.int$ -- 78
+cite$ -- 79
+duplicate$ -- 1159
+empty$ -- 2128
+format.name$ -- 414
+if$ -- 5646
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 68
-newline$ -- 369
-num.names$ -- 235
-pop$ -- 352
+missing$ -- 73
+newline$ -- 399
+num.names$ -- 253
+pop$ -- 379
 preamble$ -- 1
-purify$ -- 484
+purify$ -- 526
 quote$ -- 0
-skip$ -- 850
+skip$ -- 914
 stack$ -- 0
-substring$ -- 1957
-swap$ -- 131
+substring$ -- 2099
+swap$ -- 136
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 422
+type$ -- 458
 warning$ -- 0
-while$ -- 255
+while$ -- 273
 width$ -- 0
-write$ -- 966
+write$ -- 1042

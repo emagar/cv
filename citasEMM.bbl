@@ -181,6 +181,12 @@ Fowler, M.~W. (2010).
   Democracy}.
 \newblock PhD thesis, Naval Postgraduate School.
 
+\bibitem[Fukumoto and Horiuchi, 2016]{fukumoto.horiuchi.2016}
+Fukumoto, K. and Horiuchi, Y. (2016).
+\newblock Identifying the effect of mobilization on voter turnout through a
+  natural experiment.
+\newblock {\em Electoral Studies}, 44:192--202.
+
 \bibitem[Garc\'ia~Escobedo, 2014]{garciaescobedo2014}
 Garc\'ia~Escobedo, M.~T. (2014).
 \newblock {\em El Instituto Federal Electoral como \'organo constitucional
@@ -211,6 +217,12 @@ Gonz{\'a}lez~Mar{\'i}n, M.~L. (2008).
 \newblock In Gonz{\'a}lez~Mar{\'i}n, M.~L. and Rodr{\'i}guez~L{\'o}pez, P.,
   editors, {\em L{\'i}mites y desigualdades en el empoderamiento de las mujeres
   en el PAN, PRI y PRD}, pages 19--31. Porr\'ua, M\'exico DF.
+
+\bibitem[Grofman and Feierherd, 2017]{grofman.feierherd.2017}
+Grofman, B. and Feierherd, G. (2017).
+\newblock The u.s. could be free of gerrymandering: Here's how other countries
+  do redistricting.
+\newblock [Online; posted 7-August-2017].
 
 \bibitem[Heisig, 2015]{heisig2015}
 Heisig, C. (2015).
@@ -249,6 +261,18 @@ Lara~Otaola, A.~M. and Saavedra~Herrera, E.~C. (2015).
   {Mexiko}.
 \newblock In Schr{\"o}ter, B., editor, {\em Das politische System {Mexikos}},
   pages 249--66. Springer Fachmedien Wiesbaden, Wiesbaden.
+
+\bibitem[Lucardi, ming]{lucardi.magnitudeArgentina.2019}
+Lucardi, A. (forthcoming).
+\newblock The effect of district magnitude on electoral outcomes: Evidence from
+  two natural experiments in argentina.
+\newblock {\em British Journal of Political Science}.
+
+\bibitem[Lucardi and Almaraz, 2017]{lucardi.almaraz.TermLimitsargentina.2017}
+Lucardi, A. and Almaraz, M.~G. (2017).
+\newblock With a little help from the opposition? relaxing term limits in the
+  argentine provinces, 1983--2017.
+\newblock {\em Journal of Politics in Latin America}, 9(3):49--90.
 
 \bibitem[Magar, 2001]{magar.2001}
 Magar, E. (2001).
@@ -360,6 +384,12 @@ Meredith, M. (2013).
 \newblock Exploiting friends-and-neighbors to estimate coattail effects.
 \newblock {\em American Political Science Review}, 107(4):742--65.
 
+\bibitem[Moraski, 2017]{moraski.RevCoattRusia.2017}
+Moraski, B.~J. (2017).
+\newblock Reverse coattail effects in undemocratic elections: an analysis of
+  russian locomotives.
+\newblock {\em Democratization}, 24(4):575--93.
+
 \bibitem[Pach{\'o}n-Buitrago, 2008]{pachon2008phd}
 Pach{\'o}n-Buitrago, M. (2008).
 \newblock {\em Cross-Avenue Politics: The Case of Colombia and Brazil}.
@@ -443,5 +473,10 @@ Sonnicksen, J. (2014).
 \newblock {\em Ein Pr{\"a}sident f{\"u}r Europa: Zur Demokratisierung der
   Europ{\"a}ischen Union}.
 \newblock Springer-Verlag, Wiesbaden.
+
+\bibitem[Trelles et~al., 2016]{trelles.etalDatosabiertos.pyg.2016}
+Trelles, A., Altman, M., Magar, E., and McDonald, M.~P. (2016).
+\newblock Datos abiertos, transparencia y redistritaci\'on en m\'exico.
+\newblock {\em Pol\'itica y Gobierno}, 23(2).
 
 \end{thebibliography}
