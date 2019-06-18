@@ -1,3 +1,7 @@
+# TeX
+*.log
+*.aux
+
 # History files
 .Rhistory
 .Rapp.history
