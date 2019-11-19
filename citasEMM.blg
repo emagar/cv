@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: citasEMM.aux
 The style file: apalike.bst
 Database file #1: /home/eric/Dropbox/mydocs/magar.bib
-You've used 125 entries,
+You've used 134 entries,
             1935 wiz_defined-function locations,
-            1207 strings with 27117 characters,
-and the built_in function-call counts, 46004 in all, are:
-= -- 4684
-> -- 1451
-< -- 116
-+ -- 466
-- -- 445
-* -- 3841
-:= -- 8035
-add.period$ -- 385
-call.type$ -- 125
-change.case$ -- 824
-chr.to.int$ -- 124
-cite$ -- 125
-duplicate$ -- 1805
-empty$ -- 3412
-format.name$ -- 662
-if$ -- 8993
+            1251 strings with 28476 characters,
+and the built_in function-call counts, 49098 in all, are:
+= -- 4984
+> -- 1550
+< -- 124
++ -- 502
+- -- 475
+* -- 4092
+:= -- 8581
+add.period$ -- 412
+call.type$ -- 134
+change.case$ -- 881
+chr.to.int$ -- 133
+cite$ -- 134
+duplicate$ -- 1934
+empty$ -- 3652
+format.name$ -- 707
+if$ -- 9598
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 117
-newline$ -- 629
-num.names$ -- 393
-pop$ -- 572
+missing$ -- 128
+newline$ -- 674
+num.names$ -- 422
+pop$ -- 621
 preamble$ -- 1
-purify$ -- 839
+purify$ -- 899
 quote$ -- 0
-skip$ -- 1419
+skip$ -- 1514
 stack$ -- 0
-substring$ -- 3523
-swap$ -- 189
+substring$ -- 3730
+swap$ -- 198
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 734
+type$ -- 780
 warning$ -- 0
-while$ -- 441
+while$ -- 466
 width$ -- 0
-write$ -- 1642
+write$ -- 1760

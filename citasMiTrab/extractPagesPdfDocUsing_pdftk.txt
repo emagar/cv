@@ -1,3 +1,0 @@
-Example: extract pp. 1:7 10:14 of 14-page document
-
-pdftk inputFile.pdf cat 1-7 10-end output outputFile.pdf

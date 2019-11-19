@@ -1,14 +1,14 @@
 
 # Table of Contents
 
-1.  [Description of *Recent Mexican Election Vote Returns* repository](#orgb001cb9)
+1.  [Description](#org64b136a)
 
-Last revision: 2018-06-27
+Last revision: 2019-11-18
 
 
-<a id="orgb001cb9"></a>
+<a id="org64b136a"></a>
 
-# Description of *Recent Mexican Election Vote Returns* repository
+# Description
 
 -   Author: Eric Magar
 -   Email: emagar at itam dot mx
