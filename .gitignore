@@ -1,6 +1,7 @@
 # TeX
 *.log
 *.aux
+*.out
 
 # History files
 .Rhistory
