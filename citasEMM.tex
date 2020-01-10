@@ -25,16 +25,6 @@
 %\onehalfspacing
 %\doublespacing
 
-% SET LONG OR SHORT VERSION OF CV
-\usepackage{ifthen}
-\newboolean{longcv}
-\setboolean{longcv}{true}  % switch true, false, to produce long, short version of cv
-\newcommand{\condcomment}[2]{\ifthenelse{#1}{#2}{}}
-%  para usarlo se pone
-%  \condcomment{\boolean{longcv}}{
-%   ...
-%  }
-
 %FOR SPANISH FORMATTING (HYPHENATION ETC.)
 \usepackage[spanish]{babel}
 
@@ -102,16 +92,16 @@
   \cs_new_eq:NN \calc \fp_eval:n
 \ExplSyntaxOff
 
-\begin{document}
-
-\nobibliography{/home/eric/Dropbox/mydocs/magar}
-
 \selectlanguage{spanish}
 %Makes itemized lists look as in English despite language=Spanish
 \renewcommand{\labelitemi}{\textbullet}
 \renewcommand{\labelitemii}{\normalfont\bfseries\textendash}
 \renewcommand{\labelitemiii}{$\star$}
 \renewcommand{\labelitemiv}{\textperiodcentered}
+
+\begin{document}
+
+\nobibliography{/home/eric/Dropbox/mydocs/magar}
 
 \textbf{\LARGE{Citas documentadas al trabajo de \\ Eric Magar Meurs}} \\ [-2ex]
 \makebox[\textwidth][r]{\hrulefill}
@@ -122,7 +112,6 @@
 \href{http://scholar.google.com.mx/citations?user=Rs7pVXQAAAAJ}{Google scholar} \\
 \url{http://orcid.org/0000-0002-6766-1677} \\
 Web of Science \href{https://publons.com/researcher/1634653/eric-magar/}{S-6603-2019} \\
-
 \end{flushright}
 \end{footnotesize}
 
@@ -153,8 +142,8 @@ Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en med
   \getrefnumber{ncites:magar.moraes.2012pp}+
   \getrefnumber{ncites:cantuDesMagar2014}+
   \getrefnumber{ncites:magar.2007ref.2015}+
-  \getrefnumber{ncites:trellesEtAl2016pyg}+
-  \getrefnumber{ncites:magar.altman.mcd.trelles2016pg}
+  \getrefnumber{ncites:magar.altman.mcd.trelles2016pg}+
+  \getrefnumber{ncites:trellesEtAl2016pyg}
   }
  citas} en revistas de 17 pa\'ises.
 
@@ -378,7 +367,7 @@ Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en med
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \fbox{\parbox{\textwidth}{
-    \bibentry{sanchez.magaloni.magar.2011} (\href{http://ericmagar.com/cv/pdfs/sanchez+magaloni+magarChapter2011.pdf}{\footnotesize{ISBN-13:978-110-700-109-1}}). \textbf{\color{red}\ref{ncites:sanchez.magaloni.magar.2011}~citas}
+    \bibentry{sanchez.magaloni.magar.2011} (\href{https://github.com/emagar/cv/blob/master/papers/sanchezMagaloniMagarLegalistInterpret2011cup.pdf}{\footnotesize{ISBN-13:978-110-700-109-1}}). \textbf{\color{red}\ref{ncites:sanchez.magaloni.magar.2011}~citas}
 }}
 
         \begin{CitasMiTrabajo}
@@ -533,7 +522,7 @@ Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en med
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \fbox{\parbox{\textwidth}{
-    \bibentry{estevez.magar.rosas.2008} (\href{http://ericmagar.com/cv/pdfs/EstevezMagarRosasIFEElecStud2008.pdf}{\footnotesize{ISSN:0261-3794}}). \textbf{\color{red}\ref{ncites:estevez.magar.rosas.2008}~citas}
+    \bibentry{estevez.magar.rosas.2008} (\href{https://github.com/emagar/cv/blob/master/papers/EstevezMagarRosasIFEElecStud2008.pdf}{\footnotesize{ISSN:0261-3794}}). \textbf{\color{red}\ref{ncites:estevez.magar.rosas.2008}~citas}
 }}
 
         \begin{CitasMiTrabajo}
@@ -741,7 +730,7 @@ Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en med
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \fbox{\parbox{\textwidth}{
-    \bibentry{magar.romero.rcp.2007} (\href{http://ericmagar.com/cv/pdfs/Magar+RomeroMx2006rcp07.pdf}{\footnotesize{ISSN:0716-1417}}).  \textbf{\color{red}\ref{ncites:magar.romero.rcp.2007}~citas}
+    \bibentry{magar.romero.rcp.2007} (\href{https://github.com/emagar/cv/blob/master/papers/magar-romero-Accidentada-consolidacion2007rcp.pdf}{\footnotesize{ISSN:0716-1417}}).  \textbf{\color{red}\ref{ncites:magar.romero.rcp.2007}~citas}
 }}
 
         \begin{CitasMiTrabajo}
@@ -1854,8 +1843,6 @@ Este documento lista citas a mis publicaciones en trabajos acad\'emicos o en med
         \label{ncites:magar.1994} % place this label after last item to record the number of cites for cross-referencing
 
         \end{CitasMiTrabajo}
-
-
 
 \end{document}
 
