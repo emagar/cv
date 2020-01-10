@@ -2,6 +2,13 @@
 *.log
 *.aux
 *.out
+*.bbl
+*.blg
+*.dvi
+*.out
+
+# Backups
+*.bak
 
 # History files
 .Rhistory
